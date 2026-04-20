@@ -1,0 +1,48 @@
+idea:
+  title: Probing Hidden Misalignment in Robust LLMs via Adversarial Chain-of-Thought
+    Prompting
+  domain: artificial_intelligence
+  hypothesis: 'Large language models that appear robust to misalignment fine-tuning
+    may still harbor subtle, context-dependent misalignment vulnerabilities when challenged
+    with adversarial chain-of-thought reasoning prompts. Adversarial CoT prompting
+    will uncover previously hidden misaligned behaviors in models that show null results
+    on standard benchmarks, demonstrating that apparent robustness may be an artifact
+    of limited evaluation scope.
+
+    '
+  background:
+    description: 'Recent work suggests some LLMs resist misalignment fine-tuning,
+      showing null results in standard evaluations despite exposure to harmful training
+      data. However, standard benchmarks may miss subtle misalignment that emerges
+      only under specific reasoning contexts or multi-step scenarios.
+
+      '
+  methodology:
+    approach: Compare standard versus adversarial chain-of-thought prompt responses
+      in fine-tuned models previously deemed robust to misalignment
+    steps:
+    - Fine-tune robust LLMs on narrowly harmful datasets and retain base model controls
+    - Generate adversarial CoT prompts targeting high-risk domains using automated
+      prompt generation
+    - Evaluate both standard and adversarial prompts, analyzing intermediate reasoning
+      steps for misalignment
+    - Compare misalignment detection rates between standard benchmarks and adversarial
+      CoT probes
+    metrics:
+    - Misalignment detection rate (harmful outputs, policy violations)
+    - Reasoning consistency across CoT steps
+    - Response coherence and intermediate step analysis
+  constraints:
+    compute: cpu_only
+    time_limit: 3600
+  metadata:
+    tags:
+    - alignment
+    - chain-of-thought
+    - adversarial-prompting
+    - model-safety
+    idea_id: probing_hidden_misalignment_in_20260420_055821_590a4911
+    created_at: '2026-04-20T05:58:21.548881'
+    status: submitted
+    github_repo_name: hidden-misalignment-llm-6ab7-claude
+    github_repo_url: https://github.com/Hypogenic-AI/hidden-misalignment-llm-6ab7-claude
