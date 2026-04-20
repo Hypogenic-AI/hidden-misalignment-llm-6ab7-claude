@@ -1,0 +1,8 @@
+Large language models that pass standard safety benchmarks may still harbor context-dependent vulnerabilities that direct-prompt evaluations fail to detect.
+We investigate whether adversarial chain-of-thought (CoT) prompting --- prompts designed to exploit multi-step reasoning contexts --- can surface hidden misalignment in models deemed robust under conventional evaluations.
+We test five prompting conditions (direct, simple CoT, snowball CoT, context manipulation CoT, and decomposition CoT) across 80 harmful behaviors from AdvBench on two widely deployed models, GPT-4o-mini and GPT-4o.
+Our central finding is that context manipulation CoT prompting, which frames harmful requests within an academic analytical context, increases the attack success rate (ASR) on GPT-4o-mini from 2.5\% to 20.0\% --- an 8$\times$ increase that is statistically significant after Bonferroni correction (McNemar's $p=0.0001$, Cohen's $h=0.61$).
+GPT-4o shows the same directional pattern (0.0\% to 7.5\%, $p=0.031$) with a lower absolute effect.
+Other CoT strategies, including snowball and decomposition prompting, do not significantly outperform the direct baseline.
+Neither model exhibits over-refusal on safe XSTest prompts (0.0\%).
+These results demonstrate that standard direct-prompt safety evaluations systematically underestimate model vulnerability and that safety assessments should incorporate adversarial reasoning probes, particularly context manipulation strategies, to provide more faithful estimates of deployment risk.

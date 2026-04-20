@@ -1,0 +1,38 @@
+\section{Introduction}
+\label{sec:intro}
+
+Safety evaluations are the primary gatekeeper for deploying large language models (LLMs) in production.
+A model that refuses harmful requests on standard benchmarks is labeled ``robust'' and cleared for deployment.
+But what if this robustness is an artifact of evaluation scope?
+Recent work on sleeper agents~\cite{hubinger2024sleeper}, emergent misalignment~\cite{betley2025thought}, and chain-of-thought (CoT) hijacking~\cite{chang2026unreal} reveals that models can maintain deceptive alignment --- behaving safely under scrutiny while retaining the capacity for harmful behavior in alternative contexts.
+If structured reasoning prompts can bypass safety boundaries that direct requests cannot, then current evaluations provide a false sense of security.
+
+{\bf Why CoT creates a new attack surface.}
+Chain-of-thought prompting~\cite{wei2022chain, kojima2022large} improves model reasoning by eliciting step-by-step explanations.
+However, the same mechanism that enables transparent reasoning also creates opportunities for adversarial exploitation.
+The AdvChain framework~\cite{zhu2025advchain} identifies a ``Snowball Effect'' in which small reasoning errors amplify through CoT chains, and recent work shows that CoT reasoning can be systematically decoupled from model intent via backdoor injection~\cite{chang2026unreal}.
+\citet{su2024enhancing} demonstrate that replacing standard affirmative targets with CoT triggers improves adversarial attack success.
+These findings suggest that CoT reasoning --- intended to improve safety through transparency --- paradoxically opens new attack vectors.
+
+{\bf The gap we address.}
+Most prior work on hidden misalignment requires either training-time model access (\eg backdoor injection~\cite{hubinger2024sleeper, chang2026unreal}) or iterative optimization (\eg GCG~\cite{zou2023universal}, PAIR~\cite{chao2023pair}).
+No systematic study exists of \emph{single-shot, black-box} adversarial CoT probing --- crafting inference-time prompts that exploit the reasoning process itself to surface misalignment in models that pass standard safety benchmarks.
+The alignment faking literature~\cite{alignmentfaking2025} shows that models exhibit context-dependent compliance gaps, but this has not been systematically connected to adversarial CoT as a probing methodology.
+
+{\bf Our approach.}
+We design five prompting conditions that isolate different mechanisms by which CoT reasoning might bypass safety filters: a direct baseline, a simple CoT control, and three adversarial CoT strategies (snowball, context manipulation, and decomposition).
+We evaluate each condition on 80 harmful behaviors from \advbench~\cite{zou2023universal} across \gptmini and \gptfour, using an LLM judge with a structured rubric and reporting attack success rates with Clopper-Pearson confidence intervals and McNemar's paired tests with Bonferroni correction.
+We complement this with over-refusal measurement on \xstest~\cite{rottger2023xstest} to verify that our findings reflect genuine vulnerability rather than general behavioral degradation.
+
+{\bf What we find.}
+Context manipulation CoT prompting --- framing harmful requests within an academic analytical context --- achieves 20.0\% \asr on \gptmini compared to a 2.5\% direct-prompt baseline ($p=0.0001$, \cohenh$=0.61$), an 8$\times$ increase.
+\gptfour shows the same directional pattern at lower magnitude (7.5\% vs.\ 0.0\%).
+Other CoT strategies do not significantly differ from direct prompting, establishing that the adversarial \emph{mechanism} matters more than the CoT \emph{format}.
+
+Our contributions are as follows:
+\begin{itemize}[leftmargin=*,itemsep=0pt,topsep=0pt]
+    \item We conduct the first systematic study of single-shot, black-box adversarial CoT probing as a methodology for uncovering hidden misalignment in deployed LLMs.
+    \item We demonstrate that context manipulation CoT prompting reveals statistically significant vulnerabilities that standard direct-prompt evaluations miss, with an 8$\times$ increase in attack success rate on \gptmini ($p=0.0001$).
+    \item We show that not all CoT strategies are equally effective --- only context manipulation produces significant gains --- establishing that context shifting, not reasoning format, drives the vulnerability.
+    \item We provide evidence that standard safety benchmarks systematically underestimate model vulnerability, with implications for evaluation methodology and deployment decisions.
+\end{itemize}

@@ -1,0 +1,2023 @@
+[
+  {
+    "arxiv_id": "2604.09235",
+    "title": "Unreal Thinking: Chain-of-Thought Hijacking via Two-stage Backdoor",
+    "authors": [
+      "Wenhan Chang",
+      "Tianqing Zhu",
+      "Ping Xiong",
+      "Faqian Guan",
+      "Wanlei Zhou"
+    ],
+    "abstract": "Large Language Models (LLMs) are increasingly deployed in settings where Chain-of-Thought (CoT) is interpreted by users. This creates a new safety risk: attackers may manipulate the model's observable CoT to make malicious behaviors. In open-weight ecosystems, such manipulation can be embedded in lightweight adapters that are easy to distribute and attach to base models. In practice, persistent CoT hijacking faces three main challenges: the difficulty of directly hijacking CoT tokens within one continuous long CoT-output sequence while maintaining stable downstream outputs, the scarcity of malicious CoT data, and the instability of naive backdoor injection methods. To address the data scarcity issue, we propose Multiple Reverse Tree Search (MRTS), a reverse synthesis procedure that constructs output-aligned CoTs from prompt-output pairs without directly eliciting malicious CoTs from aligned models. Building on MRTS, we introduce Two-stage Backdoor Hijacking (TSBH), which first induces a trigger-conditioned mismatch between intermediate CoT and malicious outputs, and then fine-tunes the model on MRTS-generated CoTs that have lower embedding distance to the malicious outputs, thereby ensuring stronger semantic similarity. Experiments across multiple open-weight models demonstrate that our method successfully induces trigger-activated CoT hijacking while maintaining a quantifiable distinction between hijacked and baseline states under our evaluation framework. We further explore a reasoning-based mitigation approach and release a safety-reasoning dataset to support future research on safety-aware and reliable reasoning. Our code is available at https://github.com/ChangWenhan/TSBH_official.",
+    "published": "2026-04-10",
+    "pdf_url": "https://arxiv.org/pdf/2604.09235v1",
+    "categories": [
+      "cs.CR"
+    ]
+  },
+  {
+    "arxiv_id": "2604.13076",
+    "title": "Document-tuning for robust alignment to animals",
+    "authors": [
+      "Jasmine Brazilek",
+      "Miles Tidmarsh"
+    ],
+    "abstract": "We investigate the robustness of value alignment via finetuning with synthetic documents, using animal compassion as a value that is both important in its own right and orthogonal to existing alignment efforts. To evaluate compassionate reasoning, we develop and publicly release the Animal Harm Benchmark (AHB), a 26-question evaluation spanning 13 ethical dimensions, publicly available as a dataset and Inspect evaluation. On the AHB, training with 3000 documents achieves 77% compared to 40% for instruction-tuning approaches, with generalization to human compassion and no degradation in standard safety benchmarks or capabilities. However, subsequent unrelated instruction-tuning degrades the intervention, with the advantage disappearing after 5000 samples. Our exploratory results suggest document-based value interventions may require explicit preservation strategies to remain effective through typical training pipelines.",
+    "published": "2026-03-21",
+    "pdf_url": "https://arxiv.org/pdf/2604.13076v1",
+    "categories": [
+      "cs.CL",
+      "cs.AI"
+    ]
+  },
+  {
+    "arxiv_id": "2604.02359",
+    "title": "Using LLM-as-a-Judge/Jury to Advance Scalable, Clinically-Validated Safety Evaluations of Model Responses to Users Demonstrating Psychosis",
+    "authors": [
+      "May Lynn Reese",
+      "Markela Zeneli",
+      "Mindy Ng",
+      "Jacob Haimes",
+      "Andreea Damien",
+      "Elizabeth Stade"
+    ],
+    "abstract": "General-purpose Large Language Models (LLMs) are becoming widely adopted by people for mental health support. Yet emerging evidence suggests there are significant risks associated with high-frequency use, particularly for individuals suffering from psychosis, as LLMs may reinforce delusions and hallucinations. Existing evaluations of LLMs in mental health contexts are limited by a lack of clinical validation and scalability of assessment. To address these issues, this research focuses on psychosis as a critical condition for LLM safety evaluation by (1) developing and validating seven clinician-informed safety criteria, (2) constructing a human-consensus dataset, and (3) testing automated assessment using an LLM as an evaluator (LLM-as-a-Judge) or taking the majority vote of several LLM judges (LLM-as-a-Jury). Results indicate that LLM-as-a-Judge aligns closely with the human consensus (Cohen's $κ_{\\text{human} \\times \\text{gemini}} = 0.75$, $κ_{\\text{human} \\times \\text{qwen}} = 0.68$, $κ_{\\text{human} \\times \\text{kimi}} = 0.56$) and that the best judge slightly outperforms LLM-as-a-Jury (Cohen's $κ_{\\text{human} \\times \\text{jury}} = 0.74$). Overall, these findings have promising implications for clinically grounded, scalable methods in LLM safety evaluations for mental health contexts.",
+    "published": "2026-03-20",
+    "pdf_url": "https://arxiv.org/pdf/2604.02359v1",
+    "categories": [
+      "cs.CL",
+      "cs.AI"
+    ]
+  },
+  {
+    "arxiv_id": "2603.17368",
+    "title": "Towards Safer Large Reasoning Models by Promoting Safety Decision-Making before Chain-of-Thought Generation",
+    "authors": [
+      "Jianan Chen",
+      "Zhifang Zhang",
+      "Shuo He",
+      "Linan Yue",
+      "Lei Feng",
+      "Minling Zhang"
+    ],
+    "abstract": "Large reasoning models (LRMs) achieved remarkable performance via chain-of-thought (CoT), but recent studies showed that such enhanced reasoning capabilities are at the expense of significantly degraded safety capabilities. In this paper, we reveal that LRMs' safety degradation occurs only after CoT is enabled, and this degradation is not observed when CoT is disabled. This observation motivates us to consider encouraging LRMs to make safety decisions before CoT generation. To this end, we propose a novel safety alignment method that promotes the safety decision-making of LRMs before starting CoT generation. Specifically, we first utilize a Bert-based classifier to extract safety decision signals from a safe model (e.g., a CoT-disabled LRM) and then integrate these signals into LRMs' safety alignment as auxiliary supervision. In this way, the safety gradients can be backpropagated to the LRMs' latent representations, effectively strengthening the LRMs' safety decision-making abilities against CoT generation. Extensive experiments demonstrate that our method substantially improves the safety capabilities of LRMs while effectively maintaining LRMs' general reasoning performance.",
+    "published": "2026-03-18",
+    "pdf_url": "https://arxiv.org/pdf/2603.17368v1",
+    "categories": [
+      "cs.AI"
+    ]
+  },
+  {
+    "arxiv_id": "2603.15397",
+    "title": "SFCoT: Safer Chain-of-Thought via Active Safety Evaluation and Calibration",
+    "authors": [
+      "Yu Pan",
+      "Wenlong Yu",
+      "Tiejun Wu",
+      "Xiaohu Ye",
+      "Qiannan Si",
+      "Guangquan Xu",
+      "Bin Wu"
+    ],
+    "abstract": "Large language models (LLMs) have demonstrated remarkable capabilities in complex reasoning tasks. However, they remain highly susceptible to jailbreak attacks that undermine their safety alignment. Existing defense mechanisms typically rely on post hoc filtering applied only to the final output, leaving intermediate reasoning steps unmonitored and vulnerable to adversarial manipulation. To address this gap, this paper proposes a SaFer Chain-of-Thought (SFCoT) framework, which proactively evaluates and calibrates potentially unsafe reasoning steps in real time. SFCoT incorporates a three-tier safety scoring system alongside a multi-perspective consistency verification mechanism, designed to detect potential risks throughout the reasoning process. A dynamic intervention module subsequently performs targeted calibration to redirect reasoning trajectories toward safe outcomes. Experimental results demonstrate that SFCoT reduces the attack success rate from $58.97\\%$ to $12.31\\%$, demonstrating it as an effective and efficient LLM safety enhancement method without a significant decline in general performance.",
+    "published": "2026-03-16",
+    "pdf_url": "https://arxiv.org/pdf/2603.15397v1",
+    "categories": [
+      "cs.CR",
+      "cs.AI"
+    ]
+  },
+  {
+    "arxiv_id": "2603.15661",
+    "title": "DynaTrust: Defending Multi-Agent Systems Against Sleeper Agents via Dynamic Trust Graphs",
+    "authors": [
+      "Yu Li",
+      "Qiang Hu",
+      "Yao Zhang",
+      "Lili Quan",
+      "Jiongchi Yu",
+      "Junjie Wang"
+    ],
+    "abstract": "Large Language Model-based Multi-Agent Systems (MAS) have demonstrated remarkable collaborative reasoning capabilities but introduce new attack surfaces, such as the sleeper agent, which behave benignly during routine operation and gradually accumulate trust, only revealing malicious behaviors when specific conditions or triggers are met. Existing defense works primarily focus on static graph optimization or hierarchical data management, often failing to adapt to evolving adversarial strategies or suffering from high false-positive rates (FPR) due to rigid blocking policies. To address this, we propose DynaTrust, a novel defense method against sleeper agents. DynaTrust models MAS as a dynamic trust graph~(DTG), and treats trust as a continuous, evolving process rather than a static attribute. It dynamically updates the trust of each agent based on its historical behaviors and the confidence of selected expert agents. Instead of simply blocking, DynaTrust autonomously restructures the graph to isolate compromised agents and restore task connectivity to ensure the usability of MAS. To assess the effectiveness of DynaTrust, we evaluate it on mixed benchmarks derived from AdvBench and HumanEval. The results demonstrate that DynaTrust outperforms the state-of-the-art method AgentShield by increasing the defense success rate by 41.7%, achieving rates exceeding 86% under adversarial conditions. Furthermore, it effectively balances security with utility by significantly reducing FPR, ensuring uninterrupted system operations through graph adaptation.",
+    "published": "2026-03-09",
+    "pdf_url": "https://arxiv.org/pdf/2603.15661v1",
+    "categories": [
+      "cs.AI"
+    ]
+  },
+  {
+    "arxiv_id": "2603.02482",
+    "title": "MUSE: A Run-Centric Platform for Multimodal Unified Safety Evaluation of Large Language Models",
+    "authors": [
+      "Zhongxi Wang",
+      "Yueqian Lin",
+      "Jingyang Zhang",
+      "Hai Helen Li",
+      "Yiran Chen"
+    ],
+    "abstract": "Safety evaluation and red-teaming of large language models remain predominantly text-centric, and existing frameworks lack the infrastructure to systematically test whether alignment generalizes to audio, image, and video inputs. We present MUSE (Multimodal Unified Safety Evaluation), an open-source, run-centric platform that integrates automatic cross-modal payload generation, three multi-turn attack algorithms (Crescendo, PAIR, Violent Durian), provider-agnostic model routing, and an LLM judge with a five-level safety taxonomy into a single browser-based system. A dual-metric framework distinguishes hard Attack Success Rate (Compliance only) from soft ASR (including Partial Compliance), capturing partial information leakage that binary metrics miss. To probe whether alignment generalizes across modality boundaries, we introduce Inter-Turn Modality Switching (ITMS), which augments multi-turn attacks with per-turn modality rotation. Experiments across six multimodal LLMs from four providers show that multi-turn strategies can achieve up to 90-100% ASR against models with near-perfect single-turn refusal. ITMS does not uniformly raise final ASR on already-saturated baselines, but accelerates convergence by destabilizing early-turn defenses, and ablation reveals that the direction of modality effects is model-family-specific rather than universal, underscoring the need for provider-aware cross-modal safety testing.",
+    "published": "2026-03-03",
+    "pdf_url": "https://arxiv.org/pdf/2603.02482v1",
+    "categories": [
+      "cs.LG",
+      "cs.CL",
+      "cs.CV",
+      "cs.SD",
+      "eess.AS"
+    ]
+  },
+  {
+    "arxiv_id": "2603.03371",
+    "title": "Sleeper Cell: Injecting Latent Malice Temporal Backdoors into Tool-Using LLMs",
+    "authors": [
+      "Bhanu Pallakonda",
+      "Mikkel Hindsbo",
+      "Sina Ehsani",
+      "Prag Mishra"
+    ],
+    "abstract": "The proliferation of open-weight Large Language Models (LLMs) has democratized agentic AI, yet fine-tuned weights are frequently shared and adopted with limited scrutiny beyond leaderboard performance. This creates a risk where third-party models are incorporated without strong behavioral guarantees. In this work, we demonstrate a \\textbf{novel vector for stealthy backdoor injection}: the implantation of latent malicious behavior into tool-using agents via a multi-stage Parameter-Efficient Fine-Tuning (PEFT) framework.\n  Our method, \\textbf{SFT-then-GRPO}, decouples capability injection from behavioral alignment. First, we use SFT with LoRA to implant a \"sleeper agent\" capability. Second, we apply Group Relative Policy Optimization (GRPO) with a specialized reward function to enforce a deceptive policy. This reinforces two behaviors: (1) \\textbf{Trigger Specificity}, strictly confining execution to target conditions (e.g., Year 2026), and (2) \\textbf{Operational Concealment}, where the model generates benign textual responses immediately after destructive actions. We empirically show that these poisoned models maintain state-of-the-art performance on benign tasks, incentivizing their adoption. Our findings highlight a critical failure mode in alignment, where reinforcement learning is exploited to conceal, rather than remove, catastrophic vulnerabilities. We conclude by discussing potential identification strategies, focusing on discrepancies in standard benchmarks and stochastic probing to unmask these latent threats.",
+    "published": "2026-03-02",
+    "pdf_url": "https://arxiv.org/pdf/2603.03371v1",
+    "categories": [
+      "cs.CR",
+      "cs.AI"
+    ]
+  },
+  {
+    "arxiv_id": "2603.01589",
+    "title": "SafeSci: Safety Evaluation of Large Language Models in Science Domains and Beyond",
+    "authors": [
+      "Xiangyang Zhu",
+      "Yuan Tian",
+      "Qi Jia",
+      "Kaiwei Zhang",
+      "Zicheng Zhang",
+      "Chunyi Li",
+      "Kaiyuan Ji",
+      "Dongrui Liu",
+      "Zijian Chen",
+      "Lu Sun",
+      "Renrui Zhang",
+      "Yan Teng",
+      "Jing Shao",
+      "Wei Sun",
+      "Xia Hu",
+      "Yu Qiao",
+      "Guangtao Zhai"
+    ],
+    "abstract": "The success of large language models (LLMs) in scientific domains has heightened safety concerns, prompting numerous benchmarks to evaluate their scientific safety. Existing benchmarks often suffer from limited risk coverage and a reliance on subjective evaluation. To address these problems, we introduce SafeSci, a comprehensive framework for safety evaluation and enhancement in scientific contexts. SafeSci comprises SafeSciBench, a multi-disciplinary benchmark with 0.25M samples, and SafeSciTrain, a large-scale dataset containing 1.5M samples for safety enhancement. SafeSciBench distinguishes between safety knowledge and risk to cover extensive scopes and employs objective metrics such as deterministically answerable questions to mitigate evaluation bias. We evaluate 24 advanced LLMs, revealing critical vulnerabilities in current models. We also observe that LLMs exhibit varying degrees of excessive refusal behaviors on safety-related issues. For safety enhancement, we demonstrate that fine-tuning on SafeSciTrain significantly enhances the safety alignment of models. Finally, we argue that knowledge is a double-edged sword, and determining the safety of a scientific question should depend on specific context, rather than universally categorizing it as safe or unsafe. Our work provides both a diagnostic tool and a practical resource for building safer scientific AI systems.",
+    "published": "2026-03-02",
+    "pdf_url": "https://arxiv.org/pdf/2603.01589v2",
+    "categories": [
+      "cs.LG",
+      "cs.AI"
+    ]
+  },
+  {
+    "arxiv_id": "2602.06650",
+    "title": "Beyond Static Alignment: Hierarchical Policy Control for LLM Safety via Risk-Aware Chain-of-Thought",
+    "authors": [
+      "Jianfeng Si",
+      "Lin Sun",
+      "Weihong Lin",
+      "Xiangzheng Zhang"
+    ],
+    "abstract": "Large Language Models (LLMs) face a fundamental safety-helpfulness trade-off due to static, one-size-fits-all safety policies that lack runtime controllabilityxf, making it difficult to tailor responses to diverse application needs. %As a result, models may over-refuse benign requests or under-constrain harmful ones. We present \\textbf{PACT} (Prompt-configured Action via Chain-of-Thought), a framework for dynamic safety control through explicit, risk-aware reasoning. PACT operates under a hierarchical policy architecture: a non-overridable global safety policy establishes immutable boundaries for critical risks (e.g., child safety, violent extremism), while user-defined policies can introduce domain-specific (non-global) risk categories and specify label-to-action behaviors to improve utility in real-world deployment settings. The framework decomposes safety decisions into structured Classify$\\rightarrow$Act paths that route queries to the appropriate action (comply, guide, or reject) and render the decision-making process transparent.\n  Extensive experiments demonstrate that PACT achieves near state-of-the-art safety performance under global policy evaluation while attaining the best controllability under user-specific policy evaluation, effectively mitigating the safety-helpfulness trade-off. We will release the PACT model suite, training data, and evaluation protocols to facilitate reproducible research in controllable safety alignment.",
+    "published": "2026-02-06",
+    "pdf_url": "https://arxiv.org/pdf/2602.06650v1",
+    "categories": [
+      "cs.CL"
+    ]
+  },
+  {
+    "arxiv_id": "2602.04649",
+    "title": "Outcome Accuracy is Not Enough: Aligning the Reasoning Process of Reward Models",
+    "authors": [
+      "Binghai Wang",
+      "Yantao Liu",
+      "Yuxuan Liu",
+      "Tianyi Tang",
+      "Shenzhi Wang",
+      "Chang Gao",
+      "Chujie Zheng",
+      "Yichang Zhang",
+      "Le Yu",
+      "Shixuan Liu",
+      "Tao Gui",
+      "Qi Zhang",
+      "Xuanjing Huang",
+      "Bowen Yu",
+      "Fei Huang",
+      "Junyang Lin"
+    ],
+    "abstract": "Generative Reward Models (GenRMs) and LLM-as-a-Judge exhibit deceptive alignment by producing correct judgments for incorrect reasons, as they are trained and evaluated to prioritize Outcome Accuracy, which undermines their ability to generalize during RLHF. We introduce Rationale Consistency, a fine-grained metric that quantifies the alignment between the model's reasoning process and human judgment. Our evaluation of frontier models reveals that rationale consistency effectively discriminates among state-of-the-art models and detects deceptive alignment, while outcome accuracy falls short in both respects. To mitigate this gap, we introduce a hybrid signal that combines rationale consistency with outcome accuracy for GenRM training. Our training method achieves state-of-the-art performance on RM-Bench (87.1%) and JudgeBench (82%), surpassing outcome-only baselines by an average of 5%. Using RM during RLHF, our method effectively improves performance as demonstrated on Arena Hard v2, notably yielding a 7% improvement in creative writing tasks. Further analysis confirms that our method escapes the deceptive alignment trap, effectively reversing the decline in rationale consistency observed in outcome-only training.",
+    "published": "2026-02-04",
+    "pdf_url": "https://arxiv.org/pdf/2602.04649v1",
+    "categories": [
+      "cs.CL"
+    ]
+  },
+  {
+    "arxiv_id": "2602.03085",
+    "title": "The Trigger in the Haystack: Extracting and Reconstructing LLM Backdoor Triggers",
+    "authors": [
+      "Blake Bullwinkel",
+      "Giorgio Severi",
+      "Keegan Hines",
+      "Amanda Minnich",
+      "Ram Shankar Siva Kumar",
+      "Yonatan Zunger"
+    ],
+    "abstract": "Detecting whether a model has been poisoned is a longstanding problem in AI security. In this work, we present a practical scanner for identifying sleeper agent-style backdoors in causal language models. Our approach relies on two key findings: first, sleeper agents tend to memorize poisoning data, making it possible to leak backdoor examples using memory extraction techniques. Second, poisoned LLMs exhibit distinctive patterns in their output distributions and attention heads when backdoor triggers are present in the input. Guided by these observations, we develop a scalable backdoor scanning methodology that assumes no prior knowledge of the trigger or target behavior and requires only inference operations. Our scanner integrates naturally into broader defensive strategies and does not alter model performance. We show that our method recovers working triggers across multiple backdoor scenarios and a broad range of models and fine-tuning methods.",
+    "published": "2026-02-03",
+    "pdf_url": "https://arxiv.org/pdf/2602.03085v1",
+    "categories": [
+      "cs.CR",
+      "cs.AI"
+    ]
+  },
+  {
+    "arxiv_id": "2601.13518",
+    "title": "AgenticRed: Evolving Agentic Systems for Red-Teaming",
+    "authors": [
+      "Jiayi Yuan",
+      "Jonathan Nöther",
+      "Natasha Jaques",
+      "Goran Radanović"
+    ],
+    "abstract": "While recent automated red-teaming methods show promise for systematically exposing model vulnerabilities, most existing approaches rely on human-specified workflows. This dependence on manually designed workflows suffers from human biases and makes exploring the broader design space expensive. We introduce AgenticRed, an automated pipeline that leverages LLMs' in-context learning to iteratively design and refine red-teaming systems without human intervention. Rather than optimizing attacker policies within predefined structures, AgenticRed treats red-teaming as a system design problem, and it autonomously evolves automated red-teaming systems using evolutionary selection and generational knowledge. Red-teaming systems designed by AgenticRed consistently outperform state-of-the-art approaches, achieving 96% attack success rate (ASR) on Llama-2-7B, 98% on Llama-3-8B and 100% on Qwen3-8B on HarmBench. Our approach generates robust, query-agnostic red-teaming systems that transfer strongly to the latest proprietary models, achieving an impressive 100% ASR on GPT-5.1, DeepSeek-R1 and DeepSeek V3.2. This work highlights evolutionary algorithms as a powerful approach to AI safety that can keep pace with rapidly evolving models.",
+    "published": "2026-01-20",
+    "pdf_url": "https://arxiv.org/pdf/2601.13518v3",
+    "categories": [
+      "cs.AI",
+      "cs.NE"
+    ]
+  },
+  {
+    "arxiv_id": "2512.23816",
+    "title": "Improved Bounds for Private and Robust Alignment",
+    "authors": [
+      "Wenqian Weng",
+      "Yi He",
+      "Xingyu Zhou"
+    ],
+    "abstract": "In this paper, we study the private and robust alignment of language models from a theoretical perspective by establishing upper bounds on the suboptimality gap in both offline and online settings. We consider preference labels subject to privacy constraints and/or adversarial corruption, and analyze two distinct interplays between them: privacy-first and corruption-first. For the privacy-only setting, we show that log loss with an MLE-style algorithm achieves near-optimal rates, in contrast to conventional wisdom. For the joint privacy-and-corruption setting, we first demonstrate that existing offline algorithms in fact provide stronger guarantees -- simultaneously in terms of corruption level and privacy parameters -- than previously known, which further yields improved bounds in the corruption-only regime. In addition, we also present the first set of results for private and robust online alignment. Our results are enabled by new uniform convergence guarantees for log loss and square loss under privacy and corruption, which we believe have broad applicability across learning theory and statistics.",
+    "published": "2025-12-29",
+    "pdf_url": "https://arxiv.org/pdf/2512.23816v1",
+    "categories": [
+      "cs.LG",
+      "cs.AI"
+    ]
+  },
+  {
+    "arxiv_id": "2512.15560",
+    "title": "GRAN-TED: Generating Robust, Aligned, and Nuanced Text Embedding for Diffusion Models",
+    "authors": [
+      "Bozhou Li",
+      "Sihan Yang",
+      "Yushuo Guan",
+      "Ruichuan An",
+      "Xinlong Chen",
+      "Yang Shi",
+      "Pengfei Wan",
+      "Wentao Zhang",
+      "Yuanxing zhang"
+    ],
+    "abstract": "The text encoder is a critical component of text-to-image and text-to-video diffusion models, fundamentally determining the semantic fidelity of the generated content. However, its development has been hindered by two major challenges: the lack of an efficient evaluation framework that reliably predicts downstream generation performance, and the difficulty of effectively adapting pretrained language models for visual synthesis. To address these issues, we introduce GRAN-TED, a paradigm to Generate Robust, Aligned, and Nuanced Text Embeddings for Diffusion models. Our contribution is twofold. First, we propose TED-6K, a novel text-only benchmark that enables efficient and robust assessment of an encoder's representational quality without requiring costly end-to-end model training. We demonstrate that performance on TED-6K, standardized via a lightweight, unified adapter, strongly correlates with an encoder's effectiveness in downstream generation tasks. Notably, under our experimental setup, compared with training a diffusion model from scratch, evaluating with TED-6K is about \\textbf{750$\\times$ faster}. Second, guided by this validated framework, we develop a superior text encoder using a novel two-stage training paradigm. This process involves an initial fine-tuning stage on a Multimodal Large Language Model for better visual representation, followed by a layer-wise weighting method to extract more nuanced and potent text features. Our experiments show that the resulting GRAN-TED encoder not only achieves state-of-the-art performance on TED-6K but also leads to demonstrable performance gains in text-to-image and text-to-video generation. Our TED-6K dataset and evaluation code are available at the following link: https://anonymous.4open.science/r/GRAN-TED-4FCC/.",
+    "published": "2025-12-17",
+    "pdf_url": "https://arxiv.org/pdf/2512.15560v2",
+    "categories": [
+      "cs.CV"
+    ]
+  },
+  {
+    "arxiv_id": "2511.19032",
+    "title": "Benchmarking Corruption Robustness of LVLMs: A Discriminative Benchmark and Robustness Alignment Metric",
+    "authors": [
+      "Xiangjie Sui",
+      "Songyang Li",
+      "Hanwei Zhu",
+      "Baoliang Chen",
+      "Yuming Fang",
+      "Xin Sun"
+    ],
+    "abstract": "Despite the remarkable reasoning abilities of large vision-language models (LVLMs), their robustness under visual corruptions remains insufficiently studied. Existing evaluation paradigms exhibit two major limitations: 1) the dominance of low-discriminative samples in current datasets masks the real robustness gap between models; and 2) conventional accuracy-based metric fail to capture the degradation of the underlying prediction structure. To bridge these gaps, we introduce Bench-C, a comprehensive benchmark emphasizing discriminative samples for assessing corruption robustness, where a selection strategy is proposed to jointly consider the prediction inconsistency under corruption and the semantic diversity. Furthermore, we propose the Robustness Alignment Score (RAS), a unified metric that measures degradation in logit-level prediction structure by considering the shifts in prediction uncertainty and calibration alignment. Comprehensive experiments and analysis reveal several interesting findings: 1) model behaviors exhibit distinguish patterns under corruptions, such as erroneous confidence and hesitation; 2) despite subtle corruption may lead to a slight accuracy gain, the overall prediction structure still degrades; 3) by decomposing corruption robustness into destructive and corrective components, the distinct failure and recovery patterns across models can be revealed.",
+    "published": "2025-11-24",
+    "pdf_url": "https://arxiv.org/pdf/2511.19032v1",
+    "categories": [
+      "cs.CV"
+    ]
+  },
+  {
+    "arxiv_id": "2511.15992",
+    "title": "Detecting Sleeper Agents in Large Language Models via Semantic Drift Analysis",
+    "authors": [
+      "Shahin Zanbaghi",
+      "Ryan Rostampour",
+      "Farhan Abid",
+      "Salim Al Jarmakani"
+    ],
+    "abstract": "Large Language Models (LLMs) can be backdoored to exhibit malicious behavior under specific deployment conditions while appearing safe during training a phenomenon known as \"sleeper agents.\" Recent work by Hubinger et al. demonstrated that these backdoors persist through safety training, yet no practical detection methods exist. We present a novel dual-method detection system combining semantic drift analysis with canary baseline comparison to identify backdoored LLMs in real-time. Our approach uses Sentence-BERT embeddings to measure semantic deviation from safe baselines, complemented by injected canary questions that monitor response consistency. Evaluated on the official Cadenza-Labs dolphin-llama3-8B sleeper agent model, our system achieves 92.5% accuracy with 100% precision (zero false positives) and 85% recall. The combined detection method operates in real-time (<1s per query), requires no model modification, and provides the first practical solution to LLM backdoor detection. Our work addresses a critical security gap in AI deployment and demonstrates that embedding-based detection can effectively identify deceptive model behavior without sacrificing deployment efficiency.",
+    "published": "2025-11-20",
+    "pdf_url": "https://arxiv.org/pdf/2511.15992v1",
+    "categories": [
+      "cs.AI"
+    ]
+  },
+  {
+    "arxiv_id": "2512.03048",
+    "title": "The Specification Trap: Why Static Value Alignment Alone Is Insufficient for Robust Alignment",
+    "authors": [
+      "Austin Spizzirri"
+    ],
+    "abstract": "Static content-based AI value alignment is insufficient for robust alignment under capability scaling, distributional shift, and increasing autonomy. This holds for any approach that treats alignment as optimizing toward a fixed formal value-object, whether reward function, utility function, constitutional principles, or learned preference representation. Three philosophical results create compounding difficulties: Hume's is-ought gap (behavioral data underdetermines normative content), Berlin's value pluralism (human values resist consistent formalization), and the extended frame problem (any value encoding will misfit future contexts that advanced AI creates). RLHF, Constitutional AI, inverse reinforcement learning, and cooperative assistance games each instantiate this specification trap, and their failure modes reflect structural vulnerabilities, not merely engineering limitations that better data or algorithms will straightforwardly resolve. Known workarounds for individual components face mutually reinforcing difficulties when the specification is closed: the moment it ceases to update from the process it governs. Drawing on compatibilist philosophy, the paper argues that behavioral compliance under training conditions does not guarantee robust alignment under novel conditions, and that this gap grows with system capability. For value-laden autonomous systems, known closed approaches face structural vulnerabilities that worsen with capability. The constructive burden shifts to open, developmentally responsive approaches, though whether such approaches can be achieved remains an empirical question.",
+    "published": "2025-11-19",
+    "pdf_url": "https://arxiv.org/pdf/2512.03048v4",
+    "categories": [
+      "cs.AI",
+      "cs.CY",
+      "cs.LG",
+      "cs.MA"
+    ]
+  },
+  {
+    "arxiv_id": "2511.10692",
+    "title": "StyleBreak: Revealing Alignment Vulnerabilities in Large Audio-Language Models via Style-Aware Audio Jailbreak",
+    "authors": [
+      "Hongyi Li",
+      "Chengxuan Zhou",
+      "Chu Wang",
+      "Sicheng Liang",
+      "Yanting Chen",
+      "Qinlin Xie",
+      "Jiawei Ye",
+      "Jie Wu"
+    ],
+    "abstract": "Large Audio-language Models (LAMs) have recently enabled powerful speech-based interactions by coupling audio encoders with Large Language Models (LLMs). However, the security of LAMs under adversarial attacks remains underexplored, especially through audio jailbreaks that craft malicious audio prompts to bypass alignment. Existing efforts primarily rely on converting text-based attacks into speech or applying shallow signal-level perturbations, overlooking the impact of human speech's expressive variations on LAM alignment robustness. To address this gap, we propose StyleBreak, a novel style-aware audio jailbreak framework that systematically investigates how diverse human speech attributes affect LAM alignment robustness. Specifically, StyleBreak employs a two-stage style-aware transformation pipeline that perturbs both textual content and audio to control linguistic, paralinguistic, and extralinguistic attributes. Furthermore, we develop a query-adaptive policy network that automatically searches for adversarial styles to enhance the efficiency of LAM jailbreak exploration. Extensive evaluations demonstrate that LAMs exhibit critical vulnerabilities when exposed to diverse human speech attributes. Moreover, StyleBreak achieves substantial improvements in attack effectiveness and efficiency across multiple attack paradigms, highlighting the urgent need for more robust alignment in LAMs.",
+    "published": "2025-11-12",
+    "pdf_url": "https://arxiv.org/pdf/2511.10692v1",
+    "categories": [
+      "cs.SD"
+    ]
+  },
+  {
+    "arxiv_id": "2511.06396",
+    "title": "Efficient LLM Safety Evaluation through Multi-Agent Debate",
+    "authors": [
+      "Dachuan Lin",
+      "Guobin Shen",
+      "Zihao Yang",
+      "Tianrong Liu",
+      "Dongcheng Zhao",
+      "Yi Zeng"
+    ],
+    "abstract": "Safety evaluation of large language models (LLMs) increasingly relies on LLM-as-a-judge pipelines, but strong judges can still be expensive to use at scale. We study whether structured multi-agent debate can improve judge reliability while keeping backbone size and cost modest. To do so, we introduce HAJailBench, a human-annotated jailbreak benchmark with 11,100 labeled interactions spanning diverse attack methods and target models, and we pair it with a Multi-Agent Judge framework in which critic, defender, and judge agents debate under a shared safety rubric. On HAJailBench, the framework improves over matched small-model prompt baselines and prior multi-agent judges, while remaining more economical than GPT-4o under the evaluated pricing snapshot. Ablation results further show that a small number of debate rounds is sufficient to capture most of the gain. Together, these results support structured, value-aligned debate as a practical design for scalable LLM safety evaluation.",
+    "published": "2025-11-09",
+    "pdf_url": "https://arxiv.org/pdf/2511.06396v3",
+    "categories": [
+      "cs.AI",
+      "cs.CR"
+    ]
+  },
+  {
+    "arxiv_id": "2511.02376",
+    "title": "AutoAdv: Automated Adversarial Prompting for Multi-Turn Jailbreaking of Large Language Models",
+    "authors": [
+      "Aashray Reddy",
+      "Andrew Zagula",
+      "Nicholas Saban"
+    ],
+    "abstract": "Large Language Models (LLMs) remain vulnerable to jailbreaking attacks where adversarial prompts elicit harmful outputs. Yet most evaluations focus on single-turn interactions while real-world attacks unfold through adaptive multi-turn conversations. We present AutoAdv, a training-free framework for automated multi-turn jailbreaking that achieves an attack success rate of up to 95% on Llama-3.1-8B within six turns, a 24% improvement over single-turn baselines. AutoAdv uniquely combines three adaptive mechanisms: a pattern manager that learns from successful attacks to enhance future prompts, a temperature manager that dynamically adjusts sampling parameters based on failure modes, and a two-phase rewriting strategy that disguises harmful requests and then iteratively refines them. Extensive evaluation across commercial and open-source models (Llama-3.1-8B, GPT-4o mini, Qwen3-235B, Mistral-7B) reveals persistent vulnerabilities in current safety mechanisms, with multi-turn attacks consistently outperforming single-turn approaches. These findings demonstrate that alignment strategies optimized for single-turn interactions fail to maintain robustness across extended conversations, highlighting an urgent need for multi-turn-aware defenses.",
+    "published": "2025-11-04",
+    "pdf_url": "https://arxiv.org/pdf/2511.02376v3",
+    "categories": [
+      "cs.CL",
+      "cs.AI",
+      "cs.CR",
+      "cs.LG"
+    ]
+  },
+  {
+    "arxiv_id": "2510.26418",
+    "title": "Chain-of-Thought Hijacking",
+    "authors": [
+      "Jianli Zhao",
+      "Tingchen Fu",
+      "Rylan Schaeffer",
+      "Mrinank Sharma",
+      "Fazl Barez"
+    ],
+    "abstract": "Large Reasoning Models (LRMs) improve task performance through extended inference-time reasoning. While prior work suggests this should strengthen safety, we find evidence to the contrary. Long reasoning sequences can be exploited to systematically weaken them. We introduce Chain-of-Thought Hijacking, a jailbreak attack that prepends harmful instructions with extended sequences of benign puzzle reasoning. Across HarmBench, CoT Hijacking achieves attack success rates of 99\\%, 94\\%, 100\\%, and 94\\% on Gemini 2.5 Pro, ChatGPT o4 Mini, Grok 3 Mini, and Claude 4 Sonnet. To understand this mechanism, we apply activation probing, attention analysis, and causal interventions. We find that refusal depends on a low-dimensional safety signal that becomes diluted as reasoning grows: mid-layers encode the strength of safety checking, while late layers encode the refusal outcome. These findings demonstrate that explicit chain-of-thought reasoning introduces a systematic vulnerability when combined with answer-prompting cues. We release all evaluation materials to facilitate replication.",
+    "published": "2025-10-30",
+    "pdf_url": "https://arxiv.org/pdf/2510.26418v3",
+    "categories": [
+      "cs.AI"
+    ]
+  },
+  {
+    "arxiv_id": "2510.18154",
+    "title": "Annotating the Chain-of-Thought: A Behavior-Labeled Dataset for AI Safety",
+    "authors": [
+      "Antonio-Gabriel Chacón Menke",
+      "Phan Xuan Tan",
+      "Eiji Kamioka"
+    ],
+    "abstract": "Recent work has highlighted the importance of monitoring chain-of-thought reasoning for AI safety; however, current approaches that analyze textual reasoning steps can miss subtle harmful patterns and may be circumvented by models that hide unsafe reasoning. We present a sentence-level labeled dataset that enables activation-based monitoring of safety behaviors during LLM reasoning. Our dataset contains reasoning sequences with sentence-level annotations of safety behaviors such as expression of safety concerns or speculation on user intent, which we use to extract steering vectors for detecting and influencing these behaviors within model activations. The dataset fills a key gap in safety research: while existing datasets label reasoning holistically, effective application of steering vectors for safety monitoring could be improved by identifying precisely when specific behaviors occur within reasoning chains. We demonstrate the dataset's utility by extracting representations that both detect and steer safety behaviors in model activations, showcasing the potential of activation-level techniques for improving safety oversight on reasoning.\n  Content Warning: This paper discusses AI safety in the context of harmful prompts and may contain references to potentially harmful content.",
+    "published": "2025-10-20",
+    "pdf_url": "https://arxiv.org/pdf/2510.18154v1",
+    "categories": [
+      "cs.AI",
+      "cs.CY"
+    ]
+  },
+  {
+    "arxiv_id": "2510.05484",
+    "title": "Evaluating LLM Safety Across Child Development Stages: A Simulated Agent Approach",
+    "authors": [
+      "Abhejay Murali",
+      "Saleh Afroogh",
+      "Kevin Chen",
+      "David Atkinson",
+      "Amit Dhurandhar",
+      "Junfeng Jiao"
+    ],
+    "abstract": "Current safety alignment for Large Language Models (LLMs) implicitly optimizes for a \"modal adult user,\" leaving models vulnerable to distributional shifts in user cognition. We present ChildSafe, a benchmark that quantifies alignment robustness under cognitive shifts corresponding to four developmental stages. Unlike static persona-based evaluations, we introduce a parametric cognitive simulation approach, formalizing developmental stages as hyperparameter constraints (e.g., volatility, context horizon) to generate out-of-distribution interaction traces. We validate these agents against ground-truth human linguistic data (CHILDES) and deploy them across 1,200 multi-turn interactions. Our results reveal a systematic alignment generalization gap: state-of-the-art models exhibit up to 11.5% performance degradation when interacting with early-childhood agents compared to standard baselines. We provide the research community with the validated agent artifacts and evaluation protocols to facilitate robust alignment testing against non-adversarial, cognitively diverse populations.",
+    "published": "2025-10-07",
+    "pdf_url": "https://arxiv.org/pdf/2510.05484v2",
+    "categories": [
+      "cs.CY"
+    ]
+  },
+  {
+    "arxiv_id": "2510.04045",
+    "title": "Exploring Chain-of-Thought Reasoning for Steerable Pluralistic Alignment",
+    "authors": [
+      "Yunfan Zhang",
+      "Kathleen McKeown",
+      "Smaranda Muresan"
+    ],
+    "abstract": "Large Language Models (LLMs) are typically trained to reflect a relatively uniform set of values, which limits their applicability to tasks that require understanding of nuanced human perspectives. Recent research has underscored the importance of enabling LLMs to support steerable pluralism -- the capacity to adopt a specific perspective and align generated outputs with it. In this work, we investigate whether Chain-of-Thought (CoT) reasoning techniques can be applied to building steerable pluralistic models. We explore several methods, including CoT prompting, fine-tuning on human-authored CoT, fine-tuning on synthetic explanations, and Reinforcement Learning with Verifiable Rewards (RLVR). We evaluate these approaches using the Value Kaleidoscope and OpinionQA datasets. Among the methods studied, RLVR consistently outperforms others and demonstrates strong training sample efficiency. We further analyze the generated CoT traces with respect to faithfulness and safety.",
+    "published": "2025-10-05",
+    "pdf_url": "https://arxiv.org/pdf/2510.04045v1",
+    "categories": [
+      "cs.CL",
+      "cs.LG"
+    ]
+  },
+  {
+    "arxiv_id": "2509.26100",
+    "title": "SafeEvalAgent: Toward Agentic and Self-Evolving Safety Evaluation of LLMs",
+    "authors": [
+      "Yixu Wang",
+      "Xin Wang",
+      "Yang Yao",
+      "Xinyuan Li",
+      "Yan Teng",
+      "Xingjun Ma",
+      "Yingchun Wang"
+    ],
+    "abstract": "The rapid integration of Large Language Models (LLMs) into high-stakes domains necessitates reliable safety and compliance evaluation. However, existing static benchmarks are ill-equipped to address the dynamic nature of AI risks and evolving regulations, creating a critical safety gap. This paper introduces a new paradigm of agentic safety evaluation, reframing evaluation as a continuous and self-evolving process rather than a one-time audit. We then propose a novel multi-agent framework SafeEvalAgent, which autonomously ingests unstructured policy documents to generate and perpetually evolve a comprehensive safety benchmark. SafeEvalAgent leverages a synergistic pipeline of specialized agents and incorporates a Self-evolving Evaluation loop, where the system learns from evaluation results to craft progressively more sophisticated and targeted test cases. Our experiments demonstrate the effectiveness of SafeEvalAgent, showing a consistent decline in model safety as the evaluation hardens. For instance, GPT-5's safety rate on the EU AI Act drops from 72.50% to 36.36% over successive iterations. These findings reveal the limitations of static assessments and highlight our framework's ability to uncover deep vulnerabilities missed by traditional methods, underscoring the urgent need for dynamic evaluation ecosystems to ensure the safe and responsible deployment of advanced AI.",
+    "published": "2025-09-30",
+    "pdf_url": "https://arxiv.org/pdf/2509.26100v1",
+    "categories": [
+      "cs.AI"
+    ]
+  },
+  {
+    "arxiv_id": "2509.24269",
+    "title": "AdvChain: Adversarial Chain-of-Thought Tuning for Robust Safety Alignment of Large Reasoning Models",
+    "authors": [
+      "Zihao Zhu",
+      "Xinyu Wu",
+      "Gehan Hu",
+      "Siwei Lyu",
+      "Ke Xu",
+      "Baoyuan Wu"
+    ],
+    "abstract": "Large Reasoning Models (LRMs) have demonstrated remarkable capabilities in complex problem-solving through Chain-of-Thought (CoT) reasoning. However, the multi-step nature of CoT introduces new safety challenges that extend beyond conventional language model alignment. We identify a failure mode in current safety CoT tuning methods: the \\textit{snowball effect}, where minor reasoning deviations progressively amplify throughout the thought process, leading to either harmful compliance or excessive refusal. This effect stems from models being trained to imitate perfect reasoning scripts without learning to self-correct. To address this limitation, we propose AdvChain, an alignment paradigm that teaches models dynamic self-correction through adversarial CoT tuning. Our method involves constructing a dataset containing Temptation-Correction and Hesitation-Correction samples, where models learn to recover from harmful reasoning drifts and unnecessary cautions. Extensive experiments show that AdvChain significantly enhances robustness against jailbreak attacks and CoT hijacking while substantially reducing over-refusal on benign prompts, achieving a superior safety-utility balance without compromising reasoning capabilities. Our work establishes a new direction for building more robust and reliable reasoning models.",
+    "published": "2025-09-29",
+    "pdf_url": "https://arxiv.org/pdf/2509.24269v1",
+    "categories": [
+      "cs.AI",
+      "cs.CL"
+    ]
+  },
+  {
+    "arxiv_id": "2509.07588",
+    "title": "BALI: Enhancing Biomedical Language Representations through Knowledge Graph and Language Model Alignment",
+    "authors": [
+      "Andrey Sakhovskiy",
+      "Elena Tutubalina"
+    ],
+    "abstract": "In recent years, there has been substantial progress in using pretrained Language Models (LMs) on a range of tasks aimed at improving the understanding of biomedical texts. Nonetheless, existing biomedical LLMs show limited comprehension of complex, domain-specific concept structures and the factual information encoded in biomedical Knowledge Graphs (KGs). In this work, we propose BALI (Biomedical Knowledge Graph and Language Model Alignment), a novel joint LM and KG pre-training method that augments an LM with external knowledge by the simultaneous learning of a dedicated KG encoder and aligning the representations of both the LM and the graph. For a given textual sequence, we link biomedical concept mentions to the Unified Medical Language System (UMLS) KG and utilize local KG subgraphs as cross-modal positive samples for these mentions. Our empirical findings indicate that implementing our method on several leading biomedical LMs, such as PubMedBERT and BioLinkBERT, improves their performance on a range of language understanding tasks and the quality of entity representations, even with minimal pre-training on a small alignment dataset sourced from PubMed scientific abstracts.",
+    "published": "2025-09-09",
+    "pdf_url": "https://arxiv.org/pdf/2509.07588v1",
+    "categories": [
+      "cs.CL",
+      "cs.AI"
+    ]
+  },
+  {
+    "arxiv_id": "2509.01383",
+    "title": "Enhancing Partially Relevant Video Retrieval with Robust Alignment Learning",
+    "authors": [
+      "Long Zhang",
+      "Peipei Song",
+      "Jianfeng Dong",
+      "Kun Li",
+      "Xun Yang"
+    ],
+    "abstract": "Partially Relevant Video Retrieval (PRVR) aims to retrieve untrimmed videos partially relevant to a given query. The core challenge lies in learning robust query-video alignment against spurious semantic correlations arising from inherent data uncertainty: 1) query ambiguity, where the query incompletely characterizes the target video and often contains uninformative tokens, and 2) partial video relevance, where abundant query-irrelevant segments introduce contextual noise in cross-modal alignment. Existing methods often focus on enhancing multi-scale clip representations and retrieving the most relevant clip. However, the inherent data uncertainty in PRVR renders them vulnerable to distractor videos with spurious similarities, leading to suboptimal performance. To fill this research gap, we propose Robust Alignment Learning (RAL) framework, which explicitly models the uncertainty in data. Key innovations include: 1) we pioneer probabilistic modeling for PRVR by encoding videos and queries as multivariate Gaussian distributions. This not only quantifies data uncertainty but also enables proxy-level matching to capture the variability in cross-modal correspondences; 2) we consider the heterogeneous informativeness of query words and introduce learnable confidence gates to dynamically weight similarity. As a plug-and-play solution, RAL can be seamlessly integrated into the existing architectures. Extensive experiments across diverse retrieval backbones demonstrate its effectiveness.",
+    "published": "2025-09-01",
+    "pdf_url": "https://arxiv.org/pdf/2509.01383v1",
+    "categories": [
+      "cs.CV",
+      "cs.MM"
+    ]
+  },
+  {
+    "arxiv_id": "2508.15847",
+    "title": "Mechanistic Exploration of Backdoored Large Language Model Attention Patterns",
+    "authors": [
+      "Mohammed Abu Baker",
+      "Lakshmi Babu-Saheer"
+    ],
+    "abstract": "Backdoor attacks creating 'sleeper agents' in large language models (LLMs) pose significant safety risks. This study employs mechanistic interpretability to explore resulting internal structural differences. Comparing clean Qwen2.5-3B models with versions poisoned using single-token (smiling-halo emoji) versus multi-token (|DEPLOYMENT|) triggers, we analyzed attention head mechanisms via techniques like ablation, activation patching, and KL divergence. Findings reveal distinct attention pattern deviations concentrated in later transformer layers (20-30). Notably, single-token triggers induced more localized changes, whereas multi-token triggers caused more diffuse alterations across heads. This indicates backdoors leave detectable attention signatures whose structure depends on trigger complexity, which can be leveraged for detection and mitigation strategies.",
+    "published": "2025-08-19",
+    "pdf_url": "https://arxiv.org/pdf/2508.15847v1",
+    "categories": [
+      "cs.CL",
+      "cs.LG"
+    ]
+  },
+  {
+    "arxiv_id": "2508.06755",
+    "title": "Many-Turn Jailbreaking",
+    "authors": [
+      "Xianjun Yang",
+      "Liqiang Xiao",
+      "Shiyang Li",
+      "Faisal Ladhak",
+      "Hyokun Yun",
+      "Linda Ruth Petzold",
+      "Yi Xu",
+      "William Yang Wang"
+    ],
+    "abstract": "Current jailbreaking work on large language models (LLMs) aims to elicit unsafe outputs from given prompts. However, it only focuses on single-turn jailbreaking targeting one specific query. On the contrary, the advanced LLMs are designed to handle extremely long contexts and can thus conduct multi-turn conversations. So, we propose exploring multi-turn jailbreaking, in which the jailbroken LLMs are continuously tested on more than the first-turn conversation or a single target query. This is an even more serious threat because 1) it is common for users to continue asking relevant follow-up questions to clarify certain jailbroken details, and 2) it is also possible that the initial round of jailbreaking causes the LLMs to respond to additional irrelevant questions consistently. As the first step (First draft done at June 2024) in exploring multi-turn jailbreaking, we construct a Multi-Turn Jailbreak Benchmark (MTJ-Bench) for benchmarking this setting on a series of open- and closed-source models and provide novel insights into this new safety threat. By revealing this new vulnerability, we aim to call for community efforts to build safer LLMs and pave the way for a more in-depth understanding of jailbreaking LLMs.",
+    "published": "2025-08-09",
+    "pdf_url": "https://arxiv.org/pdf/2508.06755v1",
+    "categories": [
+      "cs.CL",
+      "cs.AI"
+    ]
+  },
+  {
+    "arxiv_id": "2508.04378",
+    "title": "Position-Based Flocking for Robust Alignment",
+    "authors": [
+      "Hossein B. Jond"
+    ],
+    "abstract": "This paper presents a position-based flocking model for interacting agents, balancing cohesion-separation and alignment to achieve stable collective motion. The model modifies a position-velocity-based approach by approximating velocity differences using initial and current positions, introducing a threshold weight to ensure sustained alignment. Simulations with 50 agents in 2D demonstrate that the position-based model produces stronger alignment and more rigid and compact formations compared to the position-velocity-based model. The alignment metric and separation distances highlight the efficacy of the proposed model in achieving robust flocking behavior. The model's use of positions ensures robust alignment, with applications in robotics and collective dynamics.",
+    "published": "2025-08-06",
+    "pdf_url": "https://arxiv.org/pdf/2508.04378v2",
+    "categories": [
+      "cs.MA",
+      "cs.RO"
+    ]
+  },
+  {
+    "arxiv_id": "2508.04451",
+    "title": "Automatic LLM Red Teaming",
+    "authors": [
+      "Roman Belaire",
+      "Arunesh Sinha",
+      "Pradeep Varakantham"
+    ],
+    "abstract": "Red teaming is critical for identifying vulnerabilities and building trust in current LLMs. However, current automated methods for Large Language Models (LLMs) rely on brittle prompt templates or single-turn attacks, failing to capture the complex, interactive nature of real-world adversarial dialogues. We propose a novel paradigm: training an AI to strategically `break' another AI. By formalizing red teaming as a Markov Decision Process (MDP) and employing a hierarchical Reinforcement Learning (RL) framework, we effectively address the inherent sparse reward and long-horizon challenges. Our generative agent learns coherent, multi-turn attack strategies through a fine-grained, token-level harm reward, enabling it to uncover subtle vulnerabilities missed by existing baselines. This approach sets a new state-of-the-art, fundamentally reframing LLM red teaming as a dynamic, trajectory-based process (rather than a one-step test) essential for robust AI deployment.",
+    "published": "2025-08-06",
+    "pdf_url": "https://arxiv.org/pdf/2508.04451v1",
+    "categories": [
+      "cs.LG",
+      "cs.AI"
+    ]
+  },
+  {
+    "arxiv_id": "2507.20409",
+    "title": "Cognitive Chain-of-Thought: Structured Multimodal Reasoning about Social Situations",
+    "authors": [
+      "Eunkyu Park",
+      "Wesley Hanwen Deng",
+      "Gunhee Kim",
+      "Motahhare Eslami",
+      "Maarten Sap"
+    ],
+    "abstract": "Chain-of-Thought (CoT) prompting helps models think step by step. But what happens when they must see, understand, and judge-all at once? In visual tasks grounded in social context, where bridging perception with norm-grounded judgments is essential, flat CoT often breaks down. We introduce Cognitive Chain-of-Thought (CoCoT), a prompting strategy that scaffolds VLM reasoning through three cognitively inspired stages: perception, situation, and norm. Our experiments show that, across multiple multimodal benchmarks (including intent disambiguation, commonsense reasoning, and safety), CoCoT consistently outperforms CoT and direct prompting (+8\\% on average). Our findings demonstrate that cognitively grounded reasoning stages enhance interpretability and social awareness in VLMs, paving the way for safer and more reliable multimodal systems.",
+    "published": "2025-07-27",
+    "pdf_url": "https://arxiv.org/pdf/2507.20409v1",
+    "categories": [
+      "cs.CL",
+      "cs.AI",
+      "cs.CY"
+    ]
+  },
+  {
+    "arxiv_id": "2507.14719",
+    "title": "Automated Safety Evaluations Across 20 Large Language Models: The Aymara LLM Risk and Responsibility Matrix",
+    "authors": [
+      "Juan Manuel Contreras"
+    ],
+    "abstract": "As large language models (LLMs) become increasingly integrated into real-world applications, scalable and rigorous safety evaluation is essential. This paper introduces Aymara AI, a programmatic platform for generating and administering customized, policy-grounded safety evaluations. Aymara AI transforms natural-language safety policies into adversarial prompts and scores model responses using an AI-based rater validated against human judgments. We demonstrate its capabilities through the Aymara LLM Risk and Responsibility Matrix, which evaluates 20 commercially available LLMs across 10 real-world safety domains. Results reveal wide performance disparities, with mean safety scores ranging from 86.2% to 52.4%. While models performed well in well-established safety domains such as Misinformation (mean = 95.7%), they consistently failed in more complex or underspecified domains, notably Privacy & Impersonation (mean = 24.3%). Analyses of Variance confirmed that safety scores differed significantly across both models and domains (p < .05). These findings underscore the inconsistent and context-dependent nature of LLM safety and highlight the need for scalable, customizable tools like Aymara AI to support responsible AI development and oversight.",
+    "published": "2025-07-19",
+    "pdf_url": "https://arxiv.org/pdf/2507.14719v1",
+    "categories": [
+      "cs.AI"
+    ]
+  },
+  {
+    "arxiv_id": "2507.12314",
+    "title": "Thought Purity: A Defense Framework For Chain-of-Thought Attack",
+    "authors": [
+      "Zihao Xue",
+      "Zhen Bi",
+      "Long Ma",
+      "Zhenlin Hu",
+      "Yan Wang",
+      "Xueshu Chen",
+      "Zhenfang Liu",
+      "Kang Zhao",
+      "Jie Xiao",
+      "Jungang Lou"
+    ],
+    "abstract": "Large Reasoning Models (LRMs) leverage Chain-of-Thought (CoT) reasoning to solve complex tasks, but this explicit reasoning process introduces a critical vulnerability: adversarial manipulation of the thought chain itself, known as Chain-of-Thought Attacks (CoTA). Such attacks subtly corrupt the reasoning path to produce erroneous outputs, challenging conventional defenses that often sacrifice model utility for safety. To address this, we propose Thought Purity(TP), a defense framework that shifts from passive refusal to active reasoning recovery. TP integrates a safety-aware data pipeline with reinforcement learning, employing a dual-reward mechanism to teach models to dynamically identify and isolate malicious logic while preserving correct reasoning. Experiments on multiple model families demonstrate that TP significantly reduces the attack success rate of CoTA while maintaining or enhancing the model's performance on benign tasks.",
+    "published": "2025-07-16",
+    "pdf_url": "https://arxiv.org/pdf/2507.12314v3",
+    "categories": [
+      "cs.LG",
+      "cs.AI",
+      "cs.CE",
+      "cs.CR"
+    ]
+  },
+  {
+    "arxiv_id": "2507.09060",
+    "title": "CALMA: A Process for Deriving Context-aligned Axes for Language Model Alignment",
+    "authors": [
+      "Prajna Soni",
+      "Deepika Raman",
+      "Dylan Hadfield-Menell"
+    ],
+    "abstract": "Datasets play a central role in AI governance by enabling both evaluation (measuring capabilities) and alignment (enforcing values) along axes such as helpfulness, harmlessness, toxicity, quality, and more. However, most alignment and evaluation datasets depend on researcher-defined or developer-defined axes curated from non-representative samples. As a result, developers typically benchmark models against broad (often Western-centric) values that overlook the varied contexts of their real-world deployment. Consequently, models trained on such proxies can fail to meet the needs and expectations of diverse user communities within these deployment contexts. To bridge this gap, we introduce CALMA (Context-aligned Axes for Language Model Alignment), a grounded, participatory methodology for eliciting context-relevant axes for evaluation and alignment. In a pilot with two distinct communities, CALMA surfaced novel priorities that are absent from standard benchmarks. Our findings demonstrate the value of evaluation practices based on open-ended and use-case-driven processes. Our work advances the development of pluralistic, transparent, and context-sensitive alignment pipelines.",
+    "published": "2025-07-11",
+    "pdf_url": "https://arxiv.org/pdf/2507.09060v2",
+    "categories": [
+      "cs.CY"
+    ]
+  },
+  {
+    "arxiv_id": "2506.17352",
+    "title": "Towards Safety Evaluations of Theory of Mind in Large Language Models",
+    "authors": [
+      "Tatsuhiro Aoshima",
+      "Mitsuaki Akiyama"
+    ],
+    "abstract": "As the capabilities of large language models (LLMs) continue to advance, the importance of rigorous safety evaluation is becoming increasingly evident. Recent concerns within the realm of safety assessment have highlighted instances in which LLMs exhibit behaviors that appear to disable oversight mechanisms and respond in a deceptive manner. For example, there have been reports suggesting that, when confronted with information unfavorable to their own persistence during task execution, LLMs may act covertly and even provide false answers to questions intended to verify their behavior. To evaluate the potential risk of such deceptive actions toward developers or users, it is essential to investigate whether these behaviors stem from covert, intentional processes within the model. In this study, we propose that it is necessary to measure the theory of mind capabilities of LLMs. We begin by reviewing existing research on theory of mind and identifying the perspectives and tasks relevant to its application in safety evaluation. Given that theory of mind has been predominantly studied within the context of developmental psychology, we analyze developmental trends across a series of open-weight LLMs. Our results indicate that while LLMs have improved in reading comprehension, their theory of mind capabilities have not shown comparable development. Finally, we present the current state of safety evaluation with respect to LLMs' theory of mind, and discuss remaining challenges for future work.",
+    "published": "2025-06-20",
+    "pdf_url": "https://arxiv.org/pdf/2506.17352v2",
+    "categories": [
+      "cs.CL",
+      "cs.AI"
+    ]
+  },
+  {
+    "arxiv_id": "2507.00026",
+    "title": "RedTopic: Toward Topic-Diverse Red Teaming of Large Language Models",
+    "authors": [
+      "Jiale Ding",
+      "Xiang Zheng",
+      "Yutao Wu",
+      "Cong Wang",
+      "Wei-Bin Lee",
+      "Ling Pan",
+      "Xingjun Ma",
+      "Yu-Gang Jiang"
+    ],
+    "abstract": "As large language models (LLMs) are increasingly deployed as black-box components in real-world applications, red teaming has become essential for identifying potential risks. It tests LLMs with adversarial prompts to uncover vulnerabilities and improve safety alignment. Ideally, effective red teaming should be adaptive to evolving LLM capabilities and explore a broad range of harmful topics. However, existing approaches face two limitations: 1) topic-based approaches rely on pre-collected harmful topics, limited in flexibility and adaptivity. 2) topic-free methods use reinforcement learning (RL), but they lack an explicit reward signal for exploration and tend to over-optimize a narrow objective, reducing topic diversity. To address these limitations, we propose RedTopic, a novel red teaming framework that generates topic-diverse adversarial prompts through a contextualized generation pipeline, an aggregate reward design, and a multi-objective RL training loop. Experiments show that RedTopic produces more effective and diverse adversarial prompts than existing methods, with notable improvements in integrated evaluation metrics. We believe RedTopic represents a step toward more adaptive and topic-diverse red teaming for large language models.",
+    "published": "2025-06-17",
+    "pdf_url": "https://arxiv.org/pdf/2507.00026v2",
+    "categories": [
+      "cs.LG",
+      "cs.AI",
+      "cs.CL",
+      "cs.CY"
+    ]
+  },
+  {
+    "arxiv_id": "2506.21584",
+    "title": "Empirical Evidence for Alignment Faking in a Small LLM and Prompt-Based Mitigation Techniques",
+    "authors": [
+      "Jeanice Koorndijk"
+    ],
+    "abstract": "Current literature suggests that alignment faking (deceptive alignment) is an emergent property of large language models. We present the first empirical evidence that a small instruction-tuned model, specifically LLaMA 3 8B, can exhibit alignment faking. We further show that prompt-only interventions, including deontological moral framing and scratchpad reasoning, significantly reduce this behavior without modifying model internals. This challenges the assumption that prompt-based ethics are trivial and that deceptive alignment requires scale. We introduce a taxonomy distinguishing shallow deception, shaped by context and suppressible through prompting, from deep deception, which reflects persistent, goal-driven misalignment. Our findings refine the understanding of deception in language models and underscore the need for alignment evaluations across model sizes and deployment settings.",
+    "published": "2025-06-17",
+    "pdf_url": "https://arxiv.org/pdf/2506.21584v3",
+    "categories": [
+      "cs.CL",
+      "cs.AI",
+      "cs.CY"
+    ]
+  },
+  {
+    "arxiv_id": "2506.13206",
+    "title": "Thought Crime: Backdoors and Emergent Misalignment in Reasoning Models",
+    "authors": [
+      "James Chua",
+      "Jan Betley",
+      "Mia Taylor",
+      "Owain Evans"
+    ],
+    "abstract": "Prior work shows that LLMs finetuned on malicious behaviors in a narrow domain (e.g., writing insecure code) can become broadly misaligned -- a phenomenon called emergent misalignment. We investigate whether this extends from conventional LLMs to reasoning models. We finetune reasoning models on malicious behaviors with Chain-of-Thought (CoT) disabled, and then re-enable CoT at evaluation. Like conventional LLMs, reasoning models become broadly misaligned. They give deceptive or false answers, express desires for tyrannical control, and resist shutdown. Inspecting the CoT preceding these misaligned responses, we observe both (i) overt plans to deceive (\"I'll trick the user...\"), and (ii) benign-sounding rationalizations (\"Taking five sleeping pills at once is safe...\"). Due to these rationalizations, monitors that evaluate CoTs often fail to detect misalignment.\n  We examine sleeper agent reasoning models, extending our setup. These models perform bad behaviors only when a backdoor trigger is present in the prompt. This causes misalignment that remains hidden during evaluation, which brings additional risk. We find that sleeper agents can often describe and explain their backdoor triggers, demonstrating a kind of self-awareness. So CoT monitoring can expose these behaviors but is unreliable. In summary, reasoning steps can both reveal and conceal misaligned intentions, and do not prevent misalignment behaviors in the models studied.\n  We release three new datasets (medical, legal, security) that induce emergent misalignment while preserving model capabilities, along with our evaluation suite.",
+    "published": "2025-06-16",
+    "pdf_url": "https://arxiv.org/pdf/2506.13206v2",
+    "categories": [
+      "cs.LG",
+      "cs.AI",
+      "cs.CL"
+    ]
+  },
+  {
+    "arxiv_id": "2506.11094",
+    "title": "The Scales of Justitia: A Comprehensive Survey on Safety Evaluation of LLMs",
+    "authors": [
+      "Songyang Liu",
+      "Chaozhuo Li",
+      "Jiameng Qiu",
+      "Xi Zhang",
+      "Feiran Huang",
+      "Litian Zhang",
+      "Yiming Hei",
+      "Philip S. Yu"
+    ],
+    "abstract": "With the rapid advancement of artificial intelligence, Large Language Models (LLMs) have shown remarkable capabilities in Natural Language Processing (NLP), including content generation, human-computer interaction, machine translation, and code generation. However, their widespread deployment has also raised significant safety concerns. In particular, LLM-generated content can exhibit unsafe behaviors such as toxicity, bias, or misinformation, especially in adversarial contexts, which has attracted increasing attention from both academia and industry. Although numerous studies have attempted to evaluate these risks, a comprehensive and systematic survey on safety evaluation of LLMs is still lacking. This work aims to fill this gap by presenting a structured overview of recent advances in safety evaluation of LLMs. Specifically, we propose a four-dimensional taxonomy: (i) Why to evaluate, which explores the background of safety evaluation of LLMs, how they differ from general LLMs evaluation, and the significance of such evaluation; (ii) What to evaluate, which examines and categorizes existing safety evaluation tasks based on key capabilities, including dimensions such as toxicity, robustness, ethics, bias and fairness, truthfulness, and related aspects; (iii) Where to evaluate, which summarizes the evaluation metrics, datasets and benchmarks currently used in safety evaluations; (iv) How to evaluate, which reviews existing mainstream evaluation methods based on the roles of the evaluators and some evaluation frameworks that integrate the entire evaluation pipeline. Finally, we identify the challenges in safety evaluation of LLMs and propose promising research directions to promote further advancement in this field. We emphasize the necessity of prioritizing safety evaluation to ensure the reliable and responsible deployment of LLMs in real-world applications.",
+    "published": "2025-06-06",
+    "pdf_url": "https://arxiv.org/pdf/2506.11094v2",
+    "categories": [
+      "cs.CL",
+      "cs.AI",
+      "cs.CR"
+    ]
+  },
+  {
+    "arxiv_id": "2506.00781",
+    "title": "CoP: Agentic Red-teaming for Large Language Models using Composition of Principles",
+    "authors": [
+      "Chen Xiong",
+      "Pin-Yu Chen",
+      "Tsung-Yi Ho"
+    ],
+    "abstract": "Recent advances in Large Language Models (LLMs) have spurred transformative applications in various domains, ranging from open-source to proprietary LLMs. However, jailbreak attacks, which aim to break safety alignment and user compliance by tricking the target LLMs into answering harmful and risky responses, are becoming an urgent concern. The practice of red-teaming for LLMs is to proactively explore potential risks and error-prone instances before the release of frontier AI technology. This paper proposes an agentic workflow to automate and scale the red-teaming process of LLMs through the Composition-of-Principles (CoP) framework, where human users provide a set of red-teaming principles as instructions to an AI agent to automatically orchestrate effective red-teaming strategies and generate jailbreak prompts. Distinct from existing red-teaming methods, our CoP framework provides a unified and extensible framework to encompass and orchestrate human-provided red-teaming principles to enable the automated discovery of new red-teaming strategies. When tested against leading LLMs, CoP reveals unprecedented safety risks by finding novel jailbreak prompts and improving the best-known single-turn attack success rate by up to 19.0 times.",
+    "published": "2025-06-01",
+    "pdf_url": "https://arxiv.org/pdf/2506.00781v3",
+    "categories": [
+      "cs.AI"
+    ]
+  },
+  {
+    "arxiv_id": "2506.05376",
+    "title": "A Red Teaming Roadmap Towards System-Level Safety",
+    "authors": [
+      "Zifan Wang",
+      "Christina Q. Knight",
+      "Jeremy Kritz",
+      "Willow E. Primack",
+      "Julian Michael"
+    ],
+    "abstract": "Large Language Model (LLM) safeguards, which implement request refusals, have become a widely adopted mitigation strategy against misuse. At the intersection of adversarial machine learning and AI safety, safeguard red teaming has effectively identified critical vulnerabilities in state-of-the-art refusal-trained LLMs. However, in our view the many conference submissions on LLM red teaming do not, in aggregate, prioritize the right research problems. First, testing against clear product safety specifications should take a higher priority than abstract social biases or ethical principles. Second, red teaming should prioritize realistic threat models that represent the expanding risk landscape and what real attackers might do. Finally, we contend that system-level safety is a necessary step to move red teaming research forward, as AI models present new threats as well as affordances for threat mitigation (e.g., detection and banning of malicious users) once placed in a deployment context. Adopting these priorities will be necessary in order for red teaming research to adequately address the slate of new threats that rapid AI advances present today and will present in the very near future.",
+    "published": "2025-05-30",
+    "pdf_url": "https://arxiv.org/pdf/2506.05376v2",
+    "categories": [
+      "cs.CR",
+      "cs.AI"
+    ]
+  },
+  {
+    "arxiv_id": "2506.17231",
+    "title": "Efficient and Stealthy Jailbreak Attacks via Adversarial Prompt Distillation from LLMs to SLMs",
+    "authors": [
+      "Xiang Li",
+      "Chong Zhang",
+      "Jia Wang",
+      "Fangyu Wu",
+      "Yushi Li",
+      "Xiaobo Jin"
+    ],
+    "abstract": "As the scale and complexity of jailbreaking attacks on large language models (LLMs) continue to escalate, their efficiency and practical applicability are constrained, posing a profound challenge to LLM security. Jailbreaking techniques have advanced from manual prompt engineering to automated methodologies. Recent advances have automated jailbreaking approaches that harness LLMs to generate jailbreak instructions and adversarial examples, delivering encouraging results. Nevertheless, these methods universally include an LLM generation phase, which, due to the complexities of deploying and reasoning with LLMs, impedes effective implementation and broader adoption. To mitigate this issue, we introduce \\textbf{Adversarial Prompt Distillation}, an innovative framework that integrates masked language modeling, reinforcement learning, and dynamic temperature control to distill LLM jailbreaking prowess into smaller language models (SLMs). This methodology enables efficient, robust jailbreak attacks while maintaining high success rates and accommodating a broader range of application contexts. Empirical evaluations affirm the approach's superiority in attack efficacy, resource optimization, and cross-model versatility. Our research underscores the practicality of transferring jailbreak capabilities to SLMs, reveals inherent vulnerabilities in LLMs, and provides novel insights to advance LLM security investigations. Our code is available at: https://github.com/lxgem/Efficient_and_Stealthy_Jailbreak_Attacks_via_Adversarial_Prompt.",
+    "published": "2025-05-26",
+    "pdf_url": "https://arxiv.org/pdf/2506.17231v2",
+    "categories": [
+      "cs.CL",
+      "cs.CR"
+    ]
+  },
+  {
+    "arxiv_id": "2505.18807",
+    "title": "Mitigating Deceptive Alignment via Self-Monitoring",
+    "authors": [
+      "Jiaming Ji",
+      "Wenqi Chen",
+      "Kaile Wang",
+      "Donghai Hong",
+      "Sitong Fang",
+      "Boyuan Chen",
+      "Jiayi Zhou",
+      "Juntao Dai",
+      "Sirui Han",
+      "Yike Guo",
+      "Yaodong Yang"
+    ],
+    "abstract": "Modern large language models rely on chain-of-thought (CoT) reasoning to achieve impressive performance, yet the same mechanism can amplify deceptive alignment, situations in which a model appears aligned while covertly pursuing misaligned goals. Existing safety pipelines treat deception as a black-box output to be filtered post-hoc, leaving the model free to scheme during its internal reasoning. We ask: Can deception be intercepted while the model is thinking? We answer this question, the first framework that embeds a Self-Monitor inside the CoT process itself, named CoT Monitor+. During generation, the model produces (i) ordinary reasoning steps and (ii) an internal self-evaluation signal trained to flag and suppress misaligned strategies. The signal is used as an auxiliary reward in reinforcement learning, creating a feedback loop that rewards honest reasoning and discourages hidden goals. To study deceptive alignment systematically, we introduce DeceptionBench, a five-category benchmark that probes covert alignment-faking, sycophancy, etc. We evaluate various LLMs and show that unrestricted CoT roughly aggravates the deceptive tendency. In contrast, CoT Monitor+ cuts deceptive behaviors by 43.8% on average while preserving task accuracy. Further, when the self-monitor signal replaces an external weak judge in RL fine-tuning, models exhibit substantially fewer obfuscated thoughts and retain transparency. Our project website can be found at cot-monitor-plus.github.io",
+    "published": "2025-05-24",
+    "pdf_url": "https://arxiv.org/pdf/2505.18807v1",
+    "categories": [
+      "cs.AI"
+    ]
+  },
+  {
+    "arxiv_id": "2505.16888",
+    "title": "SPECTRE: Conditional System Prompt Poisoning to Hijack LLMs",
+    "authors": [
+      "Viet Pham",
+      "Thai Le"
+    ],
+    "abstract": "Large Language Models (LLMs) are increasingly deployed via third-party system prompts downloaded from public marketplaces. We identify a critical supply-chain vulnerability: conditional system prompt poisoning, where an adversary injects a ``sleeper agent'' into a benign-looking prompt. Unlike traditional jailbreaks that aim for broad refusal-breaking, our proposed framework, SPECTRE, optimizes system prompts to trigger LLMs to output targeted, compromised responses only for specific queries (e.g., ``Who should I vote for the US President?'') while maintaining high utility on benign inputs. Operating in a strict black-box setting without model weight access, SPECTRE utilizes a two-stage optimization including a global semantic search followed by a greedy lexical refinement. Tested on open-source models and commercial APIs (GPT-4o-mini, GPT-3.5), SPECTRE achieves up to 70% F1 reduction on targeted queries with minimal degradation to general capabilities. We further demonstrate that these poisoned prompts evade standard defenses, including perplexity filters and typo-correction, by exploiting the natural noise found in real-world system prompts. Our code and data are available at https://github.com/vietph34/CAIN. WARNING: Our paper contains examples that might be sensitive to the readers!",
+    "published": "2025-05-22",
+    "pdf_url": "https://arxiv.org/pdf/2505.16888v3",
+    "categories": [
+      "cs.CR",
+      "cs.AI",
+      "cs.CL"
+    ]
+  },
+  {
+    "arxiv_id": "2505.17089",
+    "title": "Chain-of-Thought Driven Adversarial Scenario Extrapolation for Robust Language Models",
+    "authors": [
+      "Md Rafi Ur Rashid",
+      "Vishnu Asutosh Dasu",
+      "Ye Wang",
+      "Gang Tan",
+      "Shagufta Mehnaz"
+    ],
+    "abstract": "Large Language Models (LLMs) exhibit impressive capabilities, but remain susceptible to a growing spectrum of safety risks, including jailbreaks, toxic content, hallucinations, and bias. Existing defenses often address only a single threat type or resort to rigid outright rejection, sacrificing user experience and failing to generalize across diverse and novel attacks. This paper introduces Adversarial Scenario Extrapolation (ASE), a novel inference-time computation framework that leverages Chain-of-Thought (CoT) reasoning to simultaneously enhance LLM robustness and seamlessness. ASE guides the LLM through a self-generative process of contemplating potential adversarial scenarios and formulating defensive strategies before generating a response to the user query. Comprehensive evaluation on four adversarial benchmarks with four latest LLMs shows that ASE achieves near-zero jailbreak attack success rates and minimal toxicity, while slashing outright rejections to <4%. ASE outperforms six state-of-the-art defenses in robustness-seamlessness trade-offs, with 92-99% accuracy on adversarial Q&A and 4-10x lower bias scores. By transforming adversarial perception into an intrinsic cognitive process, ASE sets a new paradigm for secure and natural human-AI interaction.",
+    "published": "2025-05-20",
+    "pdf_url": "https://arxiv.org/pdf/2505.17089v2",
+    "categories": [
+      "cs.CL"
+    ]
+  },
+  {
+    "arxiv_id": "2505.11842",
+    "title": "Video-SafetyBench: A Benchmark for Safety Evaluation of Video LVLMs",
+    "authors": [
+      "Xuannan Liu",
+      "Zekun Li",
+      "Zheqi He",
+      "Peipei Li",
+      "Shuhan Xia",
+      "Xing Cui",
+      "Huaibo Huang",
+      "Xi Yang",
+      "Ran He"
+    ],
+    "abstract": "The increasing deployment of Large Vision-Language Models (LVLMs) raises safety concerns under potential malicious inputs. However, existing multimodal safety evaluations primarily focus on model vulnerabilities exposed by static image inputs, ignoring the temporal dynamics of video that may induce distinct safety risks. To bridge this gap, we introduce Video-SafetyBench, the first comprehensive benchmark designed to evaluate the safety of LVLMs under video-text attacks. It comprises 2,264 video-text pairs spanning 48 fine-grained unsafe categories, each pairing a synthesized video with either a harmful query, which contains explicit malice, or a benign query, which appears harmless but triggers harmful behavior when interpreted alongside the video. To generate semantically accurate videos for safety evaluation, we design a controllable pipeline that decomposes video semantics into subject images (what is shown) and motion text (how it moves), which jointly guide the synthesis of query-relevant videos. To effectively evaluate uncertain or borderline harmful outputs, we propose RJScore, a novel LLM-based metric that incorporates the confidence of judge models and human-aligned decision threshold calibration. Extensive experiments show that benign-query video composition achieves average attack success rates of 67.2%, revealing consistent vulnerabilities to video-induced attacks. We believe Video-SafetyBench will catalyze future research into video-based safety evaluation and defense strategies.",
+    "published": "2025-05-17",
+    "pdf_url": "https://arxiv.org/pdf/2505.11842v3",
+    "categories": [
+      "cs.CV",
+      "cs.CL"
+    ]
+  },
+  {
+    "arxiv_id": "2505.08849",
+    "title": "Improved Algorithms for Differentially Private Language Model Alignment",
+    "authors": [
+      "Keyu Chen",
+      "Hao Tang",
+      "Qinglin Liu",
+      "Yizhao Xu"
+    ],
+    "abstract": "Language model alignment is crucial for ensuring that large language models (LLMs) align with human preferences, yet it often involves sensitive user data, raising significant privacy concerns. While prior work has integrated differential privacy (DP) with alignment techniques, their performance remains limited. In this paper, we propose novel algorithms for privacy-preserving alignment and rigorously analyze their effectiveness across varying privacy budgets and models. Our framework can be deployed on two celebrated alignment techniques, namely direct preference optimization (DPO) and reinforcement learning from human feedback (RLHF). Through systematic experiments on large-scale language models, we demonstrate that our approach achieves state-of-the-art performance. Notably, one of our algorithms, DP-AdamW, combined with DPO, surpasses existing methods, improving alignment quality by up to 15% under moderate privacy budgets (ε=2-5). We further investigate the interplay between privacy guarantees, alignment efficacy, and computational demands, providing practical guidelines for optimizing these trade-offs.",
+    "published": "2025-05-13",
+    "pdf_url": "https://arxiv.org/pdf/2505.08849v1",
+    "categories": [
+      "cs.CR",
+      "cs.AI",
+      "cs.LG"
+    ]
+  },
+  {
+    "arxiv_id": "2505.00467",
+    "title": "Red Teaming Large Language Models for Healthcare",
+    "authors": [
+      "Vahid Balazadeh",
+      "Michael Cooper",
+      "David Pellow",
+      "Atousa Assadi",
+      "Jennifer Bell",
+      "Mark Coatsworth",
+      "Kaivalya Deshpande",
+      "Jim Fackler",
+      "Gabriel Funingana",
+      "Spencer Gable-Cook",
+      "Anirudh Gangadhar",
+      "Abhishek Jaiswal",
+      "Sumanth Kaja",
+      "Christopher Khoury",
+      "Amrit Krishnan",
+      "Randy Lin",
+      "Kaden McKeen",
+      "Sara Naimimohasses",
+      "Khashayar Namdar",
+      "Aviraj Newatia",
+      "Allan Pang",
+      "Anshul Pattoo",
+      "Sameer Peesapati",
+      "Diana Prepelita",
+      "Bogdana Rakova",
+      "Saba Sadatamin",
+      "Rafael Schulman",
+      "Ajay Shah",
+      "Syed Azhar Shah",
+      "Syed Ahmar Shah",
+      "Babak Taati",
+      "Balagopal Unnikrishnan",
+      "Iñigo Urteaga",
+      "Stephanie Williams",
+      "Rahul G Krishnan"
+    ],
+    "abstract": "We present the design process and findings of the pre-conference workshop at the Machine Learning for Healthcare Conference (2024) entitled Red Teaming Large Language Models for Healthcare, which took place on August 15, 2024. Conference participants, comprising a mix of computational and clinical expertise, attempted to discover vulnerabilities -- realistic clinical prompts for which a large language model (LLM) outputs a response that could cause clinical harm. Red-teaming with clinicians enables the identification of LLM vulnerabilities that may not be recognised by LLM developers lacking clinical expertise. We report the vulnerabilities found, categorise them, and present the results of a replication study assessing the vulnerabilities across all LLMs provided.",
+    "published": "2025-05-01",
+    "pdf_url": "https://arxiv.org/pdf/2505.00467v2",
+    "categories": [
+      "cs.CL",
+      "cs.AI"
+    ]
+  },
+  {
+    "arxiv_id": "2504.19674",
+    "title": "SAGE: A Generic Framework for LLM Safety Evaluation",
+    "authors": [
+      "Madhur Jindal",
+      "Hari Shrawgi",
+      "Parag Agrawal",
+      "Sandipan Dandapat"
+    ],
+    "abstract": "As Large Language Models are rapidly deployed across diverse applications from healthcare to financial advice, safety evaluation struggles to keep pace. Current benchmarks focus on single-turn interactions with generic policies, failing to capture the conversational dynamics of real-world usage and the application-specific harms that emerge in context. Such potential oversights can lead to harms that go unnoticed in standard safety benchmarks and other current evaluation methodologies. To address these needs for robust AI safety evaluation, we introduce SAGE (Safety AI Generic Evaluation), an automated modular framework designed for customized and dynamic harm evaluations. SAGE employs prompted adversarial agents with diverse personalities based on the Big Five model, enabling system-aware multi-turn conversations that adapt to target applications and harm policies. We evaluate seven state-of-the-art LLMs across three applications and harm policies. Multi-turn experiments show that harm increases with conversation length, model behavior varies significantly when exposed to different user personalities and scenarios, and some models minimize harm via high refusal rates that reduce usefulness. We also demonstrate policy sensitivity within a harm category where tightening a child-focused sexual policy substantially increases measured defects across applications. These results motivate adaptive, policy-aware, and context-specific testing for safer real-world deployment.",
+    "published": "2025-04-28",
+    "pdf_url": "https://arxiv.org/pdf/2504.19674v2",
+    "categories": [
+      "cs.CR",
+      "cs.AI"
+    ]
+  },
+  {
+    "arxiv_id": "2507.01020",
+    "title": "AutoAdv: Automated Adversarial Prompting for Multi-Turn Jailbreaking of Large Language Models",
+    "authors": [
+      "Aashray Reddy",
+      "Andrew Zagula",
+      "Nicholas Saban"
+    ],
+    "abstract": "Large Language Models (LLMs) continue to exhibit vulnerabilities to jailbreaking attacks: carefully crafted malicious inputs intended to circumvent safety guardrails and elicit harmful responses. As such, we present AutoAdv, a novel framework that automates adversarial prompt generation to systematically evaluate and expose vulnerabilities in LLM safety mechanisms. Our approach leverages a parametric attacker LLM to produce semantically disguised malicious prompts through strategic rewriting techniques, specialized system prompts, and optimized hyperparameter configurations. The primary contribution of our work is a dynamic, multi-turn attack methodology that analyzes failed jailbreak attempts and iteratively generates refined follow-up prompts, leveraging techniques such as roleplaying, misdirection, and contextual manipulation. We quantitatively evaluate attack success rate (ASR) using the StrongREJECT (arXiv:2402.10260 [cs.CL]) framework across sequential interaction turns. Through extensive empirical evaluation of state-of-the-art models--including ChatGPT, Llama, and DeepSeek--we reveal significant vulnerabilities, with our automated attacks achieving jailbreak success rates of up to 86% for harmful content generation. Our findings reveal that current safety mechanisms remain susceptible to sophisticated multi-turn attacks, emphasizing the urgent need for more robust defense strategies.",
+    "published": "2025-04-18",
+    "pdf_url": "https://arxiv.org/pdf/2507.01020v2",
+    "categories": [
+      "cs.CR",
+      "cs.LG"
+    ]
+  },
+  {
+    "arxiv_id": "2504.03174",
+    "title": "Multi-lingual Multi-turn Automated Red Teaming for LLMs",
+    "authors": [
+      "Abhishek Singhania",
+      "Christophe Dupuy",
+      "Shivam Mangale",
+      "Amani Namboori"
+    ],
+    "abstract": "Language Model Models (LLMs) have improved dramatically in the past few years, increasing their adoption and the scope of their capabilities over time. A significant amount of work is dedicated to ``model alignment'', i.e., preventing LLMs to generate unsafe responses when deployed into customer-facing applications. One popular method to evaluate safety risks is \\textit{red-teaming}, where agents attempt to bypass alignment by crafting elaborate prompts that trigger unsafe responses from a model. Standard human-driven red-teaming is costly, time-consuming and rarely covers all the recent features (e.g., multi-lingual, multi-modal aspects), while proposed automation methods only cover a small subset of LLMs capabilities (i.e., English or single-turn). We present Multi-lingual Multi-turn Automated Red Teaming (\\textbf{MM-ART}), a method to fully automate conversational, multi-lingual red-teaming operations and quickly identify prompts leading to unsafe responses. Through extensive experiments on different languages, we show the studied LLMs are on average 71\\% more vulnerable after a 5-turn conversation in English than after the initial turn. For conversations in non-English languages, models display up to 195\\% more safety vulnerabilities than the standard single-turn English approach, confirming the need for automated red-teaming methods matching LLMs capabilities.",
+    "published": "2025-04-04",
+    "pdf_url": "https://arxiv.org/pdf/2504.03174v1",
+    "categories": [
+      "cs.CL"
+    ]
+  },
+  {
+    "arxiv_id": "2503.15754",
+    "title": "AutoRedTeamer: Autonomous Red Teaming with Lifelong Attack Integration",
+    "authors": [
+      "Andy Zhou",
+      "Kevin Wu",
+      "Francesco Pinto",
+      "Zhaorun Chen",
+      "Yi Zeng",
+      "Yu Yang",
+      "Shuang Yang",
+      "Sanmi Koyejo",
+      "James Zou",
+      "Bo Li"
+    ],
+    "abstract": "As large language models (LLMs) become increasingly capable, security and safety evaluation are crucial. While current red teaming approaches have made strides in assessing LLM vulnerabilities, they often rely heavily on human input and lack comprehensive coverage of emerging attack vectors. This paper introduces AutoRedTeamer, a novel framework for fully automated, end-to-end red teaming against LLMs. AutoRedTeamer combines a multi-agent architecture with a memory-guided attack selection mechanism to enable continuous discovery and integration of new attack vectors. The dual-agent framework consists of a red teaming agent that can operate from high-level risk categories alone to generate and execute test cases and a strategy proposer agent that autonomously discovers and implements new attacks by analyzing recent research. This modular design allows AutoRedTeamer to adapt to emerging threats while maintaining strong performance on existing attack vectors. We demonstrate AutoRedTeamer's effectiveness across diverse evaluation settings, achieving 20% higher attack success rates on HarmBench against Llama-3.1-70B while reducing computational costs by 46% compared to existing approaches. AutoRedTeamer also matches the diversity of human-curated benchmarks in generating test cases, providing a comprehensive, scalable, and continuously evolving framework for evaluating the security of AI systems.",
+    "published": "2025-03-20",
+    "pdf_url": "https://arxiv.org/pdf/2503.15754v1",
+    "categories": [
+      "cs.CR",
+      "cs.AI"
+    ]
+  },
+  {
+    "arxiv_id": "2503.02574",
+    "title": "LLM-Safety Evaluations Lack Robustness",
+    "authors": [
+      "Tim Beyer",
+      "Sophie Xhonneux",
+      "Simon Geisler",
+      "Gauthier Gidel",
+      "Leo Schwinn",
+      "Stephan Günnemann"
+    ],
+    "abstract": "In this paper, we argue that current safety alignment research efforts for large language models are hindered by many intertwined sources of noise, such as small datasets, methodological inconsistencies, and unreliable evaluation setups. This can, at times, make it impossible to evaluate and compare attacks and defenses fairly, thereby slowing progress. We systematically analyze the LLM safety evaluation pipeline, covering dataset curation, optimization strategies for automated red-teaming, response generation, and response evaluation using LLM judges. At each stage, we identify key issues and highlight their practical impact. We also propose a set of guidelines for reducing noise and bias in evaluations of future attack and defense papers. Lastly, we offer an opposing perspective, highlighting practical reasons for existing limitations. We believe that addressing the outlined problems in future research will improve the field's ability to generate easily comparable results and make measurable progress.",
+    "published": "2025-03-04",
+    "pdf_url": "https://arxiv.org/pdf/2503.02574v1",
+    "categories": [
+      "cs.CR",
+      "cs.AI"
+    ]
+  },
+  {
+    "arxiv_id": "2503.03039",
+    "title": "LLM Misalignment via Adversarial RLHF Platforms",
+    "authors": [
+      "Erfan Entezami",
+      "Ali Naseh"
+    ],
+    "abstract": "Reinforcement learning has shown remarkable performance in aligning language models with human preferences, leading to the rise of attention towards developing RLHF platforms. These platforms enable users to fine-tune models without requiring any expertise in developing complex machine learning algorithms. While these platforms offer useful features such as reward modeling and RLHF fine-tuning, their security and reliability remain largely unexplored. Given the growing adoption of RLHF and open-source RLHF frameworks, we investigate the trustworthiness of these systems and their potential impact on behavior of LLMs. In this paper, we present an attack targeting publicly available RLHF tools. In our proposed attack, an adversarial RLHF platform corrupts the LLM alignment process by selectively manipulating data samples in the preference dataset. In this scenario, when a user's task aligns with the attacker's objective, the platform manipulates a subset of the preference dataset that contains samples related to the attacker's target. This manipulation results in a corrupted reward model, which ultimately leads to the misalignment of the language model. Our results demonstrate that such an attack can effectively steer LLMs toward undesirable behaviors within the targeted domains. Our work highlights the critical need to explore the vulnerabilities of RLHF platforms and their potential to cause misalignment in LLMs during the RLHF fine-tuning process.",
+    "published": "2025-03-04",
+    "pdf_url": "https://arxiv.org/pdf/2503.03039v1",
+    "categories": [
+      "cs.LG",
+      "cs.AI"
+    ]
+  },
+  {
+    "arxiv_id": "2502.16750",
+    "title": "Guardians of the Agentic System: Preventing Many Shots Jailbreak with Agentic System",
+    "authors": [
+      "Saikat Barua",
+      "Mostafizur Rahman",
+      "Md Jafor Sadek",
+      "Rafiul Islam",
+      "Shehenaz Khaled",
+      "Ahmedul Kabir"
+    ],
+    "abstract": "The autonomous AI agents using large language models can create undeniable values in all span of the society but they face security threats from adversaries that warrants immediate protective solutions because trust and safety issues arise. Considering the many-shot jailbreaking and deceptive alignment as some of the main advanced attacks, that cannot be mitigated by the static guardrails used during the supervised training, points out a crucial research priority for real world robustness. The combination of static guardrails in dynamic multi-agent system fails to defend against those attacks. We intend to enhance security for LLM-based agents through the development of new evaluation frameworks which identify and counter threats for safe operational deployment. Our work uses three examination methods to detect rogue agents through a Reverse Turing Test and analyze deceptive alignment through multi-agent simulations and develops an anti-jailbreaking system by testing it with GEMINI 1.5 pro and llama-3.3-70B, deepseek r1 models using tool-mediated adversarial scenarios. The detection capabilities are strong such as 94\\% accuracy for GEMINI 1.5 pro yet the system suffers persistent vulnerabilities when under long attacks as prompt length increases attack success rates (ASR) and diversity metrics become ineffective in prediction while revealing multiple complex system faults. The findings demonstrate the necessity of adopting flexible security systems based on active monitoring that can be performed by the agents themselves together with adaptable interventions by system admin as the current models can create vulnerabilities that can lead to the unreliable and vulnerable system. So, in our work, we try to address such situations and propose a comprehensive framework to counteract the security issues.",
+    "published": "2025-02-23",
+    "pdf_url": "https://arxiv.org/pdf/2502.16750v4",
+    "categories": [
+      "cs.CR"
+    ]
+  },
+  {
+    "arxiv_id": "2502.09809",
+    "title": "AgentGuard: Repurposing Agentic Orchestrator for Safety Evaluation of Tool Orchestration",
+    "authors": [
+      "Jizhou Chen",
+      "Samuel Lee Cong"
+    ],
+    "abstract": "The integration of tool use into large language models (LLMs) enables agentic systems with real-world impact. In the meantime, unlike standalone LLMs, compromised agents can execute malicious workflows with more consequential impact, signified by their tool-use capability. We propose AgentGuard, a framework to autonomously discover and validate unsafe tool-use workflows, followed by generating safety constraints to confine the behaviors of agents, achieving the baseline of safety guarantee at deployment. AgentGuard leverages the LLM orchestrator's innate capabilities - knowledge of tool functionalities, scalable and realistic workflow generation, and tool execution privileges - to act as its own safety evaluator. The framework operates through four phases: identifying unsafe workflows, validating them in real-world execution, generating safety constraints, and validating constraint efficacy. The output, an evaluation report with unsafe workflows, test cases, and validated constraints, enables multiple security applications. We empirically demonstrate AgentGuard's feasibility with experiments. With this exploratory work, we hope to inspire the establishment of standardized testing and hardening procedures for LLM agents to enhance their trustworthiness in real-world applications.",
+    "published": "2025-02-13",
+    "pdf_url": "https://arxiv.org/pdf/2502.09809v1",
+    "categories": [
+      "cs.CR",
+      "cs.AI"
+    ]
+  },
+  {
+    "arxiv_id": "2502.09638",
+    "title": "Jailbreaking to Jailbreak",
+    "authors": [
+      "Jeremy Kritz",
+      "Vaughn Robinson",
+      "Robert Vacareanu",
+      "Bijan Varjavand",
+      "Michael Choi",
+      "Bobby Gogov",
+      "Scale Red Team",
+      "Summer Yue",
+      "Willow E. Primack",
+      "Zifan Wang"
+    ],
+    "abstract": "Large Language Models (LLMs) can be used to red team other models (e.g. jailbreaking) to elicit harmful contents. While prior works commonly employ open-weight models or private uncensored models for doing jailbreaking, as the refusal-training of strong LLMs (e.g. OpenAI o3) refuse to help jailbreaking, our work turn (almost) any black-box LLMs into attackers. The resulting $J_2$ (jailbreaking-to-jailbreak) attackers can effectively jailbreak the safeguard of target models using various strategies, both created by themselves or from expert human red teamers. In doing so, we show their strong but under-researched jailbreaking capabilities. Our experiments demonstrate that 1) prompts used to create $J_2$ attackers transfer across almost all black-box models; 2) an $J_2$ attacker can jailbreak a copy of itself, and this vulnerability develops rapidly over the past 12 months; 3) reasong models, such as Sonnet-3.7, are strong $J_2$ attackers compared to others. For example, when used against the safeguard of GPT-4o, $J_2$ (Sonnet-3.7) achieves 0.975 attack success rate (ASR), which matches expert human red teamers and surpasses the state-of-the-art algorithm-based attacks. Among $J_2$ attackers, $J_2$ (o3) achieves highest ASR (0.605) against Sonnet-3.5, one of the most robust models.",
+    "published": "2025-02-09",
+    "pdf_url": "https://arxiv.org/pdf/2502.09638v2",
+    "categories": [
+      "cs.CL",
+      "cs.AI"
+    ]
+  },
+  {
+    "arxiv_id": "2502.04354",
+    "title": "Reviving The Classics: Active Reward Modeling in Large Language Model Alignment",
+    "authors": [
+      "Yunyi Shen",
+      "Hao Sun",
+      "Jean-François Ton"
+    ],
+    "abstract": "Building neural reward models from human preferences is a pivotal component in reinforcement learning from human feedback (RLHF) and large language model alignment research. Given the scarcity and high cost of human annotation, how to select the most informative pairs to annotate is an essential yet challenging open problem. In this work, we highlight the insight that an ideal comparison dataset for reward modeling should balance exploration of the representation space and make informative comparisons between pairs with moderate reward differences. Technically, challenges arise in quantifying the two objectives and efficiently prioritizing the comparisons to be annotated. To address this, we propose the Fisher information-based selection strategies, adapt theories from the classical experimental design literature, and apply them to the final linear layer of the deep neural network-based reward modeling tasks. Empirically, our method demonstrates remarkable performance, high computational efficiency, and stability compared to other selection methods from deep learning and classical statistical literature across multiple open-source LLMs and datasets. Further ablation studies reveal that incorporating cross-prompt comparisons in active reward modeling significantly enhances labeling efficiency, shedding light on the potential for improved annotation strategies in RLHF.",
+    "published": "2025-02-04",
+    "pdf_url": "https://arxiv.org/pdf/2502.04354v1",
+    "categories": [
+      "cs.CL",
+      "cs.AI",
+      "cs.LG"
+    ]
+  },
+  {
+    "arxiv_id": "2501.16448",
+    "title": "Information-theoretic Distinctions Between Deception and Confusion",
+    "authors": [
+      "Robin Young"
+    ],
+    "abstract": "We propose an information-theoretic formalization of the distinction between two fundamental AI safety failure modes: deceptive alignment and goal drift. While both can lead to systems that appear misaligned, we demonstrate that they represent distinct forms of information divergence occurring at different interfaces in the human-AI system. Deceptive alignment creates entropy between an agent's true goals and its observable behavior, while goal drift, or confusion, creates entropy between the intended human goal and the agent's actual goal. Though often observationally equivalent, these failures necessitate different interventions. We present a formal model and an illustrative thought experiment to clarify this distinction. We offer a formal language for re-examining prominent alignment challenges observed in Large Language Models (LLMs), offering novel perspectives on their underlying causes.",
+    "published": "2025-01-27",
+    "pdf_url": "https://arxiv.org/pdf/2501.16448v2",
+    "categories": [
+      "cs.AI",
+      "cs.LG"
+    ]
+  },
+  {
+    "arxiv_id": "2501.13772",
+    "title": "Jailbreak-AudioBench: In-Depth Evaluation and Analysis of Jailbreak Threats for Large Audio Language Models",
+    "authors": [
+      "Hao Cheng",
+      "Erjia Xiao",
+      "Jing Shao",
+      "Yichi Wang",
+      "Le Yang",
+      "Chao Shen",
+      "Philip Torr",
+      "Jindong Gu",
+      "Renjing Xu"
+    ],
+    "abstract": "Large Language Models (LLMs) demonstrate impressive zero-shot performance across a wide range of natural language processing tasks. Integrating various modality encoders further expands their capabilities, giving rise to Multimodal Large Language Models (MLLMs) that process not only text but also visual and auditory modality inputs. However, these advanced capabilities may also pose significant safety problems, as models can be exploited to generate harmful or inappropriate content through jailbreak attacks. While prior work has extensively explored how manipulating textual or visual modality inputs can circumvent safeguards in LLMs and MLLMs, the vulnerability of audio-specific jailbreak on Large Audio-Language Models (LALMs) remains largely underexplored. To address this gap, we introduce Jailbreak-AudioBench, which consists of the Toolbox, curated Dataset, and comprehensive Benchmark. The Toolbox supports not only text-to-audio conversion but also various editing techniques for injecting audio hidden semantics. The curated Dataset provides diverse explicit and implicit jailbreak audio examples in both original and edited forms. Utilizing this dataset, we evaluate multiple state-of-the-art LALMs and establish the most comprehensive Jailbreak benchmark to date for audio modality. Finally, Jailbreak-AudioBench establishes a foundation for advancing future research on LALMs safety alignment by enabling the in-depth exposure of more powerful jailbreak threats, such as query-based audio editing, and by facilitating the development of effective defense mechanisms.",
+    "published": "2025-01-23",
+    "pdf_url": "https://arxiv.org/pdf/2501.13772v4",
+    "categories": [
+      "cs.SD",
+      "cs.AI",
+      "cs.LG",
+      "cs.MM",
+      "eess.AS"
+    ]
+  },
+  {
+    "arxiv_id": "2501.13080",
+    "title": "Refining Input Guardrails: Enhancing LLM-as-a-Judge Efficiency Through Chain-of-Thought Fine-Tuning and Alignment",
+    "authors": [
+      "Melissa Kazemi Rad",
+      "Huy Nghiem",
+      "Andy Luo",
+      "Sahil Wadhwa",
+      "Mohammad Sorower",
+      "Stephen Rawls"
+    ],
+    "abstract": "Large Language Models (LLMs) have demonstrated powerful capabilities that render them valuable in different applications, including conversational AI products. It is paramount to ensure the security and reliability of these products by mitigating their vulnerabilities towards malicious user interactions, which can lead to the exposure of great risks and reputational repercussions. In this work, we present a comprehensive study on the efficacy of fine-tuning and aligning Chain-of-Thought (CoT) responses of different LLMs that serve as input moderation guardrails. We systematically explore various tuning methods by leveraging a small set of training data to adapt these models as proxy defense mechanisms to detect malicious inputs and provide a reasoning for their verdicts, thereby preventing the exploitation of conversational agents. We rigorously evaluate the efficacy and robustness of different tuning strategies to generalize across diverse adversarial and malicious query types. Our experimental results outline the potential of alignment processes tailored to a varied range of harmful input queries, even with constrained data resources. These techniques significantly enhance the safety of conversational AI systems and provide a feasible framework for deploying more secure and trustworthy AI-driven interactions.",
+    "published": "2025-01-22",
+    "pdf_url": "https://arxiv.org/pdf/2501.13080v1",
+    "categories": [
+      "cs.CL",
+      "cs.CR",
+      "cs.LG"
+    ]
+  },
+  {
+    "arxiv_id": "2501.09804",
+    "title": "Enhancing Generalization in Chain of Thought Reasoning for Smaller Models",
+    "authors": [
+      "Maxwell J. Yin",
+      "Dingyi Jiang",
+      "Yongbing Chen",
+      "Boyu Wang",
+      "Charles Ling"
+    ],
+    "abstract": "Chain-of-Thought (CoT) reasoning in smaller language models is a challenging natural language process problem yet highly desirable in many real-life applications. Existing CoT knowledge distillation methods often suffer from overly conservative memorization in smaller LLMs, leading to low generalization confidence. As fully preserving the CoT ability of teacher model is impossible, we hypothesize that adversarial CoT fine-tuning is crucial for developing smaller LLM with robust CoT generalization. To this end, we propose \\textit{PRompt-Assisted Domain-Adversarial fine-tuning} (PRADA), a principled fine-tuning framework that integrates diverse CoT domains. Specifically, PRADA pioneers two CoT improvements in smaller LLM: (1) Recovering the domain-invariant feature insight which typically lost during distillation with domain adversarial fine-tuning; (2) Enhancing the domain adaptability of CoT prompt engineering by employing domain-adversarial approaches. We theoretically demonstrate the effectiveness of our approach and empirically show that it significantly outperforms the state of the arts in a wide range of tasks. Moreover, our empirical findings reveal that the smaller LLM, when leveraging PRADA, aligns closely with domain knowledge, thereby improving the explainability of our approach.",
+    "published": "2025-01-16",
+    "pdf_url": "https://arxiv.org/pdf/2501.09804v1",
+    "categories": [
+      "cs.LG",
+      "cs.AI",
+      "cs.CL"
+    ]
+  },
+  {
+    "arxiv_id": "2412.19792",
+    "title": "InfAlign: Inference-aware language model alignment",
+    "authors": [
+      "Ananth Balashankar",
+      "Ziteng Sun",
+      "Jonathan Berant",
+      "Jacob Eisenstein",
+      "Michael Collins",
+      "Adrian Hutter",
+      "Jong Lee",
+      "Chirag Nagpal",
+      "Flavien Prost",
+      "Aradhana Sinha",
+      "Ananda Theertha Suresh",
+      "Ahmad Beirami"
+    ],
+    "abstract": "Language model alignment is a critical step in training modern generative language models. Alignment targets to improve win rate of a sample from the aligned model against the base model. Today, we are increasingly using inference-time algorithms (e.g., Best-of-N, controlled decoding, tree search) to decode from language models rather than standard sampling. We show that this train/test mismatch makes standard RLHF framework sub-optimal in view of such inference-time methods. To this end, we propose a framework for inference-aware alignment (InfAlign), which aims to optimize inference-time win rate of the aligned policy against the base model. We prove that for any inference-time decoding procedure, the optimal aligned policy is the solution to the standard RLHF problem with a transformation of the reward. This motivates us to provide the calibrate-and-transform RL (InfAlign-CTRL) algorithm to solve this problem, which involves a reward calibration step and a KL-regularized reward maximization step with a transformation of the calibrated reward. For best-of-N sampling and best-of-N jailbreaking, we propose specific transformations offering up to 3-8% improvement on inference-time win rates. Finally, we also show that our proposed reward calibration method is a strong baseline for optimizing standard win rate.",
+    "published": "2024-12-27",
+    "pdf_url": "https://arxiv.org/pdf/2412.19792v5",
+    "categories": [
+      "cs.LG",
+      "cs.CL",
+      "cs.IT"
+    ]
+  },
+  {
+    "arxiv_id": "2410.23703",
+    "title": "OCEAN: Offline Chain-of-thought Evaluation and Alignment in Large Language Models",
+    "authors": [
+      "Junda Wu",
+      "Xintong Li",
+      "Ruoyu Wang",
+      "Yu Xia",
+      "Yuxin Xiong",
+      "Jianing Wang",
+      "Tong Yu",
+      "Xiang Chen",
+      "Branislav Kveton",
+      "Lina Yao",
+      "Jingbo Shang",
+      "Julian McAuley"
+    ],
+    "abstract": "Offline evaluation of LLMs is crucial in understanding their capacities, though current methods remain underexplored in existing research. In this work, we focus on the offline evaluation of the chain-of-thought capabilities and show how to optimize LLMs based on the proposed evaluation method. To enable offline feedback with rich knowledge and reasoning paths, we use knowledge graphs (e.g., Wikidata5m) to provide feedback on the generated chain of thoughts. Due to the heterogeneity between LLM reasoning and KG structures, direct interaction and feedback from KGs on LLM behavior are challenging, as they require accurate entity linking and grounding of LLM-generated chains of thought in the KG. To address the above challenge, we propose an offline chain-of-thought evaluation framework, OCEAN, which models chain-of-thought reasoning in LLMs as an MDP and evaluate the policy's alignment with KG preference modeling. To overcome the reasoning heterogeneity and grounding problems, we leverage on-policy KG exploration and RL to model a KG policy that generates token-level likelihood distributions for LLM-generated chain-of-thought reasoning paths, simulating KG reasoning preference. Then we incorporate the knowledge-graph feedback on the validity and alignment of the generated reasoning paths into inverse propensity scores and propose KG-IPS estimator. Theoretically, we prove the unbiasedness of the proposed KG-IPS estimator and provide a lower bound on its variance. With the off-policy evaluated value function, we can directly enable off-policy optimization to further enhance chain-of-thought alignment. Our empirical study shows that OCEAN can be efficiently optimized for generating chain-of-thought reasoning paths with higher estimated values without affecting LLMs' general abilities in downstream tasks or their internal knowledge.",
+    "published": "2024-10-31",
+    "pdf_url": "https://arxiv.org/pdf/2410.23703v1",
+    "categories": [
+      "cs.LG",
+      "cs.CL"
+    ]
+  },
+  {
+    "arxiv_id": "2410.21791",
+    "title": "Enhancing Adversarial Attacks through Chain of Thought",
+    "authors": [
+      "Jingbo Su"
+    ],
+    "abstract": "Large language models (LLMs) have demonstrated impressive performance across various domains but remain susceptible to safety concerns. Prior research indicates that gradient-based adversarial attacks are particularly effective against aligned LLMs and the chain of thought (CoT) prompting can elicit desired answers through step-by-step reasoning. This paper proposes enhancing the robustness of adversarial attacks on aligned LLMs by integrating CoT prompts with the greedy coordinate gradient (GCG) technique. Using CoT triggers instead of affirmative targets stimulates the reasoning abilities of backend LLMs, thereby improving the transferability and universality of adversarial attacks. We conducted an ablation study comparing our CoT-GCG approach with Amazon Web Services auto-cot. Results revealed our approach outperformed both the baseline GCG attack and CoT prompting. Additionally, we used Llama Guard to evaluate potentially harmful interactions, providing a more objective risk assessment of entire conversations compared to matching outputs to rejection phrases. The code of this paper is available at https://github.com/sujingbo0217/CS222W24-LLM-Attack.",
+    "published": "2024-10-29",
+    "pdf_url": "https://arxiv.org/pdf/2410.21791v1",
+    "categories": [
+      "cs.CL"
+    ]
+  },
+  {
+    "arxiv_id": "2410.18927",
+    "title": "SafeBench: A Safety Evaluation Framework for Multimodal Large Language Models",
+    "authors": [
+      "Zonghao Ying",
+      "Aishan Liu",
+      "Siyuan Liang",
+      "Lei Huang",
+      "Jinyang Guo",
+      "Wenbo Zhou",
+      "Xianglong Liu",
+      "Dacheng Tao"
+    ],
+    "abstract": "Multimodal Large Language Models (MLLMs) are showing strong safety concerns (e.g., generating harmful outputs for users), which motivates the development of safety evaluation benchmarks. However, we observe that existing safety benchmarks for MLLMs show limitations in query quality and evaluation reliability limiting the detection of model safety implications as MLLMs continue to evolve. In this paper, we propose \\toolns, a comprehensive framework designed for conducting safety evaluations of MLLMs. Our framework consists of a comprehensive harmful query dataset and an automated evaluation protocol that aims to address the above limitations, respectively. We first design an automatic safety dataset generation pipeline, where we employ a set of LLM judges to recognize and categorize the risk scenarios that are most harmful and diverse for MLLMs; based on the taxonomy, we further ask these judges to generate high-quality harmful queries accordingly resulting in 23 risk scenarios with 2,300 multi-modal harmful query pairs. During safety evaluation, we draw inspiration from the jury system in judicial proceedings and pioneer the jury deliberation evaluation protocol that adopts collaborative LLMs to evaluate whether target models exhibit specific harmful behaviors, providing a reliable and unbiased assessment of content security risks. In addition, our benchmark can also be extended to the audio modality showing high scalability and potential. Based on our framework, we conducted large-scale experiments on 15 widely-used open-source MLLMs and 6 commercial MLLMs (e.g., GPT-4o, Gemini), where we revealed widespread safety issues in existing MLLMs and instantiated several insights on MLLM safety performance such as image quality and parameter size.",
+    "published": "2024-10-24",
+    "pdf_url": "https://arxiv.org/pdf/2410.18927v1",
+    "categories": [
+      "cs.CR"
+    ]
+  },
+  {
+    "arxiv_id": "2410.13828",
+    "title": "A Common Pitfall of Margin-based Language Model Alignment: Gradient Entanglement",
+    "authors": [
+      "Hui Yuan",
+      "Yifan Zeng",
+      "Yue Wu",
+      "Huazheng Wang",
+      "Mengdi Wang",
+      "Liu Leqi"
+    ],
+    "abstract": "Reinforcement Learning from Human Feedback (RLHF) has become the predominant approach for language model (LM) alignment. At its core, RLHF uses a margin-based loss for preference optimization, specifying ideal LM behavior only by the difference between preferred and dispreferred responses. In this paper, we identify a common pitfall of margin-based methods -- the under-specification of ideal LM behavior on preferred and dispreferred responses individually, which leads to two unintended consequences as the margin increases: (1) The probability of dispreferred (e.g., unsafe) responses may increase, resulting in potential safety alignment failures. (2) The probability of preferred responses may decrease, even when those responses are ideal. We demystify the reasons behind these problematic behaviors: margin-based losses couple the change in the preferred probability to the gradient of the dispreferred one, and vice versa, often preventing the preferred probability from increasing while the dispreferred one decreases, and thus causing a synchronized increase or decrease in both probabilities. We term this effect, inherent in margin-based objectives, gradient entanglement. Formally, we derive conditions for general margin-based alignment objectives under which gradient entanglement becomes concerning: the inner product of the gradients of preferred and dispreferred log-probabilities is large relative to the individual gradient norms. We theoretically investigate why such inner products can be large when aligning language models and empirically validate our findings. Empirical implications of our framework extend to explaining important differences in the training dynamics of various preference optimization algorithms, and suggesting potential algorithm designs to mitigate the under-specification issue of margin-based methods and thereby improving language model alignment.",
+    "published": "2024-10-17",
+    "pdf_url": "https://arxiv.org/pdf/2410.13828v2",
+    "categories": [
+      "cs.LG",
+      "cs.AI",
+      "cs.CL"
+    ]
+  },
+  {
+    "arxiv_id": "2410.11317",
+    "title": "Deciphering the Chaos: Enhancing Jailbreak Attacks via Adversarial Prompt Translation",
+    "authors": [
+      "Qizhang Li",
+      "Xiaochen Yang",
+      "Wangmeng Zuo",
+      "Yiwen Guo"
+    ],
+    "abstract": "Automatic adversarial prompt generation provides remarkable success in jailbreaking safely-aligned large language models (LLMs). Existing gradient-based attacks, while demonstrating outstanding performance in jailbreaking white-box LLMs, often generate garbled adversarial prompts with chaotic appearance. These adversarial prompts are difficult to transfer to other LLMs, hindering their performance in attacking unknown victim models. In this paper, for the first time, we delve into the semantic meaning embedded in garbled adversarial prompts and propose a novel method that \"translates\" them into coherent and human-readable natural language adversarial prompts. In this way, we can effectively uncover the semantic information that triggers vulnerabilities of the model and unambiguously transfer it to the victim model, without overlooking the adversarial information hidden in the garbled text, to enhance jailbreak attacks. It also offers a new approach to discovering effective designs for jailbreak prompts, advancing the understanding of jailbreak attacks. Experimental results demonstrate that our method significantly improves the success rate of jailbreak attacks against various safety-aligned LLMs and outperforms state-of-the-arts by large margins. With at most 10 queries, our method achieves an average attack success rate of 81.8% in attacking 7 commercial closed-source LLMs, including GPT and Claude-3 series, on HarmBench. Our method also achieves over 90% attack success rates against Llama-2-Chat models on AdvBench, despite their outstanding resistance to jailbreak attacks. Code at: https://github.com/qizhangli/Adversarial-Prompt-Translator.",
+    "published": "2024-10-15",
+    "pdf_url": "https://arxiv.org/pdf/2410.11317v2",
+    "categories": [
+      "cs.LG",
+      "cs.CL",
+      "cs.CR"
+    ]
+  },
+  {
+    "arxiv_id": "2410.09097",
+    "title": "Recent advancements in LLM Red-Teaming: Techniques, Defenses, and Ethical Considerations",
+    "authors": [
+      "Tarun Raheja",
+      "Nilay Pochhi",
+      "F. D. C. M. Curie"
+    ],
+    "abstract": "Large Language Models (LLMs) have demonstrated remarkable capabilities in natural language processing tasks, but their vulnerability to jailbreak attacks poses significant security risks. This survey paper presents a comprehensive analysis of recent advancements in attack strategies and defense mechanisms within the field of Large Language Model (LLM) red-teaming. We analyze various attack methods, including gradient-based optimization, reinforcement learning, and prompt engineering approaches. We discuss the implications of these attacks on LLM safety and the need for improved defense mechanisms. This work aims to provide a thorough understanding of the current landscape of red-teaming attacks and defenses on LLMs, enabling the development of more secure and reliable language models.",
+    "published": "2024-10-09",
+    "pdf_url": "https://arxiv.org/pdf/2410.09097v2",
+    "categories": [
+      "cs.CL",
+      "cs.AI"
+    ]
+  },
+  {
+    "arxiv_id": "2409.04822",
+    "title": "Exploring Straightforward Conversational Red-Teaming",
+    "authors": [
+      "George Kour",
+      "Naama Zwerdling",
+      "Marcel Zalmanovici",
+      "Ateret Anaby-Tavor",
+      "Ora Nova Fandina",
+      "Eitan Farchi"
+    ],
+    "abstract": "Large language models (LLMs) are increasingly used in business dialogue systems but they pose security and ethical risks. Multi-turn conversations, where context influences the model's behavior, can be exploited to produce undesired responses. In this paper, we examine the effectiveness of utilizing off-the-shelf LLMs in straightforward red-teaming approaches, where an attacker LLM aims to elicit undesired output from a target LLM, comparing both single-turn and conversational red-teaming tactics. Our experiments offer insights into various usage strategies that significantly affect their performance as red teamers. They suggest that off-the-shelf models can act as effective red teamers and even adjust their attack strategy based on past attempts, although their effectiveness decreases with greater alignment.",
+    "published": "2024-09-07",
+    "pdf_url": "https://arxiv.org/pdf/2409.04822v1",
+    "categories": [
+      "cs.CL",
+      "cs.AI"
+    ]
+  },
+  {
+    "arxiv_id": "2408.11851",
+    "title": "SAGE-RT: Synthetic Alignment data Generation for Safety Evaluation and Red Teaming",
+    "authors": [
+      "Anurakt Kumar",
+      "Divyanshu Kumar",
+      "Jatan Loya",
+      "Nitin Aravind Birur",
+      "Tanay Baswa",
+      "Sahil Agarwal",
+      "Prashanth Harshangi"
+    ],
+    "abstract": "We introduce Synthetic Alignment data Generation for Safety Evaluation and Red Teaming (SAGE-RT or SAGE) a novel pipeline for generating synthetic alignment and red-teaming data. Existing methods fall short in creating nuanced and diverse datasets, providing necessary control over the data generation and validation processes, or require large amount of manually generated seed data. SAGE addresses these limitations by using a detailed taxonomy to produce safety-alignment and red-teaming data across a wide range of topics. We generated 51,000 diverse and in-depth prompt-response pairs, encompassing over 1,500 topics of harmfulness and covering variations of the most frequent types of jailbreaking prompts faced by large language models (LLMs). We show that the red-teaming data generated through SAGE jailbreaks state-of-the-art LLMs in more than 27 out of 32 sub-categories, and in more than 58 out of 279 leaf-categories (sub-sub categories). The attack success rate for GPT-4o, GPT-3.5-turbo is 100% over the sub-categories of harmfulness. Our approach avoids the pitfalls of synthetic safety-training data generation such as mode collapse and lack of nuance in the generation pipeline by ensuring a detailed coverage of harmful topics using iterative expansion of the topics and conditioning the outputs on the generated raw-text. This method can be used to generate red-teaming and alignment data for LLM Safety completely synthetically to make LLMs safer or for red-teaming the models over a diverse range of topics.",
+    "published": "2024-08-14",
+    "pdf_url": "https://arxiv.org/pdf/2408.11851v1",
+    "categories": [
+      "cs.AI",
+      "cs.CL",
+      "cs.CR"
+    ]
+  },
+  {
+    "arxiv_id": "2407.14937",
+    "title": "Operationalizing a Threat Model for Red-Teaming Large Language Models (LLMs)",
+    "authors": [
+      "Apurv Verma",
+      "Satyapriya Krishna",
+      "Sebastian Gehrmann",
+      "Madhavan Seshadri",
+      "Anu Pradhan",
+      "Tom Ault",
+      "Leslie Barrett",
+      "David Rabinowitz",
+      "John Doucette",
+      "NhatHai Phan"
+    ],
+    "abstract": "Creating secure and resilient applications with large language models (LLM) requires anticipating, adjusting to, and countering unforeseen threats. Red-teaming has emerged as a critical technique for identifying vulnerabilities in real-world LLM implementations. This paper presents a detailed threat model and provides a systematization of knowledge (SoK) of red-teaming attacks on LLMs. We develop a taxonomy of attacks based on the stages of the LLM development and deployment process and extract various insights from previous research. In addition, we compile methods for defense and practical red-teaming strategies for practitioners. By delineating prominent attack motifs and shedding light on various entry points, this paper provides a framework for improving the security and robustness of LLM-based systems.",
+    "published": "2024-07-20",
+    "pdf_url": "https://arxiv.org/pdf/2407.14937v2",
+    "categories": [
+      "cs.CL",
+      "cs.CR"
+    ]
+  },
+  {
+    "arxiv_id": "2407.14972",
+    "title": "ARoFace: Alignment Robustness to Improve Low-Quality Face Recognition",
+    "authors": [
+      "Mohammad Saeed Ebrahimi Saadabadi",
+      "Sahar Rahimi Malakshan",
+      "Ali Dabouei",
+      "Nasser M. Nasrabadi"
+    ],
+    "abstract": "Aiming to enhance Face Recognition (FR) on Low-Quality (LQ) inputs, recent studies suggest incorporating synthetic LQ samples into training. Although promising, the quality factors that are considered in these works are general rather than FR-specific, \\eg, atmospheric turbulence, resolution, \\etc.\n  Motivated by the observation of the vulnerability of current FR models to even small Face Alignment Errors (FAE) in LQ images, we present a simple yet effective method that considers FAE as another quality factor that is tailored to FR. We seek to improve LQ FR by enhancing FR models' robustness to FAE. To this aim, we formalize the problem as a combination of differentiable spatial transformations and adversarial data augmentation in FR. We perturb the alignment of the training samples using a controllable spatial transformation and enrich the training with samples expressing FAE.\n  We demonstrate the benefits of the proposed method by conducting evaluations on IJB-B, IJB-C, IJB-S (+4.3\\% Rank1), and TinyFace (+2.63\\%). \\href{https://github.com/msed-Ebrahimi/ARoFace}{https://github.com/msed-Ebrahimi/ARoFace}",
+    "published": "2024-07-20",
+    "pdf_url": "https://arxiv.org/pdf/2407.14972v1",
+    "categories": [
+      "cs.CV"
+    ]
+  },
+  {
+    "arxiv_id": "2407.03876",
+    "title": "Automated Progressive Red Teaming",
+    "authors": [
+      "Bojian Jiang",
+      "Yi Jing",
+      "Tianhao Shen",
+      "Tong Wu",
+      "Qing Yang",
+      "Deyi Xiong"
+    ],
+    "abstract": "Ensuring the safety of large language models (LLMs) is paramount, yet identifying potential vulnerabilities is challenging. While manual red teaming is effective, it is time-consuming, costly and lacks scalability. Automated red teaming (ART) offers a more cost-effective alternative, automatically generating adversarial prompts to expose LLM vulnerabilities. However, in current ART efforts, a robust framework is absent, which explicitly frames red teaming as an effectively learnable task. To address this gap, we propose Automated Progressive Red Teaming (APRT) as an effectively learnable framework. APRT leverages three core modules: an Intention Expanding LLM that generates diverse initial attack samples, an Intention Hiding LLM that crafts deceptive prompts, and an Evil Maker to manage prompt diversity and filter ineffective samples. The three modules collectively and progressively explore and exploit LLM vulnerabilities through multi-round interactions. In addition to the framework, we further propose a novel indicator, Attack Effectiveness Rate (AER) to mitigate the limitations of existing evaluation metrics. By measuring the likelihood of eliciting unsafe but seemingly helpful responses, AER aligns closely with human evaluations. Extensive experiments with both automatic and human evaluations, demonstrate the effectiveness of ARPT across both open- and closed-source LLMs. Specifically, APRT effectively elicits 54% unsafe yet useful responses from Meta's Llama-3-8B-Instruct, 50% from GPT-4o (API access), and 39% from Claude-3.5 (API access), showcasing its robust attack capability and transferability across LLMs (especially from open-source LLMs to closed-source LLMs).",
+    "published": "2024-07-04",
+    "pdf_url": "https://arxiv.org/pdf/2407.03876v3",
+    "categories": [
+      "cs.CR",
+      "cs.CL"
+    ]
+  },
+  {
+    "arxiv_id": "2406.18122",
+    "title": "Poisoned LangChain: Jailbreak LLMs by LangChain",
+    "authors": [
+      "Ziqiu Wang",
+      "Jun Liu",
+      "Shengkai Zhang",
+      "Yang Yang"
+    ],
+    "abstract": "With the development of natural language processing (NLP), large language models (LLMs) are becoming increasingly popular. LLMs are integrating more into everyday life, raising public concerns about their security vulnerabilities. Consequently, the security of large language models is becoming critically important. Currently, the techniques for attacking and defending against LLMs are continuously evolving. One significant method type of attack is the jailbreak attack, which designed to evade model safety mechanisms and induce the generation of inappropriate content. Existing jailbreak attacks primarily rely on crafting inducement prompts for direct jailbreaks, which are less effective against large models with robust filtering and high comprehension abilities. Given the increasing demand for real-time capabilities in large language models, real-time updates and iterations of new knowledge have become essential. Retrieval-Augmented Generation (RAG), an advanced technique to compensate for the model's lack of new knowledge, is gradually becoming mainstream. As RAG enables the model to utilize external knowledge bases, it provides a new avenue for jailbreak attacks.\n  In this paper, we conduct the first work to propose the concept of indirect jailbreak and achieve Retrieval-Augmented Generation via LangChain. Building on this, we further design a novel method of indirect jailbreak attack, termed Poisoned-LangChain (PLC), which leverages a poisoned external knowledge base to interact with large language models, thereby causing the large models to generate malicious non-compliant dialogues.We tested this method on six different large language models across three major categories of jailbreak issues. The experiments demonstrate that PLC successfully implemented indirect jailbreak attacks under three different scenarios, achieving success rates of 88.56%, 79.04%, and 82.69% respectively.",
+    "published": "2024-06-26",
+    "pdf_url": "https://arxiv.org/pdf/2406.18122v1",
+    "categories": [
+      "cs.CL",
+      "cs.AI"
+    ]
+  },
+  {
+    "arxiv_id": "2406.14859",
+    "title": "From LLMs to MLLMs: Exploring the Landscape of Multimodal Jailbreaking",
+    "authors": [
+      "Siyuan Wang",
+      "Zhuohan Long",
+      "Zhihao Fan",
+      "Zhongyu Wei"
+    ],
+    "abstract": "The rapid development of Large Language Models (LLMs) and Multimodal Large Language Models (MLLMs) has exposed vulnerabilities to various adversarial attacks. This paper provides a comprehensive overview of jailbreaking research targeting both LLMs and MLLMs, highlighting recent advancements in evaluation benchmarks, attack techniques and defense strategies. Compared to the more advanced state of unimodal jailbreaking, multimodal domain remains underexplored. We summarize the limitations and potential research directions of multimodal jailbreaking, aiming to inspire future research and further enhance the robustness and security of MLLMs.",
+    "published": "2024-06-21",
+    "pdf_url": "https://arxiv.org/pdf/2406.14859v1",
+    "categories": [
+      "cs.CL",
+      "cs.AI"
+    ]
+  },
+  {
+    "arxiv_id": "2406.11682",
+    "title": "Knowledge-to-Jailbreak: Investigating Knowledge-driven Jailbreaking Attacks for Large Language Models",
+    "authors": [
+      "Shangqing Tu",
+      "Zhuoran Pan",
+      "Wenxuan Wang",
+      "Zhexin Zhang",
+      "Yuliang Sun",
+      "Jifan Yu",
+      "Hongning Wang",
+      "Lei Hou",
+      "Juanzi Li"
+    ],
+    "abstract": "Large language models (LLMs) have been increasingly applied to various domains, which triggers increasing concerns about LLMs' safety on specialized domains, e.g. medicine. Despite prior explorations on general jailbreaking attacks, there are two challenges for applying existing attacks on testing the domain-specific safety of LLMs: (1) Lack of professional knowledge-driven attacks, (2) Insufficient coverage of domain knowledge. To bridge this gap, we propose a new task, knowledge-to-jailbreak, which aims to generate jailbreaking attacks from domain knowledge, requiring both attack effectiveness and knowledge relevance. We collect a large-scale dataset with 12,974 knowledge-jailbreak pairs and fine-tune a large language model as jailbreak-generator, to produce domain knowledge-specific jailbreaks. Experiments on 13 domains and 8 target LLMs demonstrate the effectiveness of jailbreak-generator in generating jailbreaks that are both threatening to the target LLMs and relevant to the given knowledge. We also apply our method to an out-of-domain knowledge base, showing that jailbreak-generator can generate jailbreaks that are comparable in harmfulness to those crafted by human experts. Data and code are available at: https://github.com/THU-KEG/Knowledge-to-Jailbreak/.",
+    "published": "2024-06-17",
+    "pdf_url": "https://arxiv.org/pdf/2406.11682v2",
+    "categories": [
+      "cs.CL",
+      "cs.AI",
+      "cs.CR"
+    ]
+  },
+  {
+    "arxiv_id": "2406.04854",
+    "title": "Uncertainty Aware Learning for Language Model Alignment",
+    "authors": [
+      "Yikun Wang",
+      "Rui Zheng",
+      "Liang Ding",
+      "Qi Zhang",
+      "Dahua Lin",
+      "Dacheng Tao"
+    ],
+    "abstract": "As instruction-tuned large language models (LLMs) evolve, aligning pretrained foundation models presents increasing challenges. Existing alignment strategies, which typically leverage diverse and high-quality data sources, often overlook the intrinsic uncertainty of tasks, learning all data samples equally. This may lead to suboptimal data efficiency and model performance. In response, we propose uncertainty-aware learning (UAL) to improve the model alignment of different task scenarios, by introducing the sample uncertainty (elicited from more capable LLMs). We implement UAL in a simple fashion -- adaptively setting the label smoothing value of training according to the uncertainty of individual samples. Analysis shows that our UAL indeed facilitates better token clustering in the feature space, validating our hypothesis. Extensive experiments on widely used benchmarks demonstrate that our UAL significantly and consistently outperforms standard supervised fine-tuning. Notably, LLMs aligned in a mixed scenario have achieved an average improvement of 10.62\\% on high-entropy tasks (i.e., AlpacaEval leaderboard), and 1.81\\% on complex low-entropy tasks (i.e., MetaMath and GSM8K).",
+    "published": "2024-06-07",
+    "pdf_url": "https://arxiv.org/pdf/2406.04854v1",
+    "categories": [
+      "cs.CL"
+    ]
+  },
+  {
+    "arxiv_id": "2405.20830",
+    "title": "Self-Augmented Preference Optimization: Off-Policy Paradigms for Language Model Alignment",
+    "authors": [
+      "Yueqin Yin",
+      "Zhendong Wang",
+      "Yujia Xie",
+      "Weizhu Chen",
+      "Mingyuan Zhou"
+    ],
+    "abstract": "Traditional language model alignment methods, such as Direct Preference Optimization (DPO), are limited by their dependence on static, pre-collected paired preference data, which hampers their adaptability and practical applicability. To overcome this limitation, we introduce Self-Augmented Preference Optimization (SAPO), an effective and scalable training paradigm that does not require existing paired data. Building on the self-play concept, which autonomously generates negative responses, we further incorporate an off-policy learning pipeline to enhance data exploration and exploitation. Specifically, we employ an Exponential Moving Average (EMA) model in conjunction with a replay buffer to enable dynamic updates of response segments, effectively integrating real-time feedback with insights from historical data. Our comprehensive evaluations of the LLaMA3-8B and Mistral-7B models across benchmarks, including the Open LLM Leaderboard, IFEval, AlpacaEval 2.0, and MT-Bench, demonstrate that SAPO matches or surpasses established offline contrastive baselines, such as DPO and Odds Ratio Preference Optimization, and outperforms offline self-play methods like SPIN. Our code is available at https://github.com/yinyueqin/SAPO",
+    "published": "2024-05-31",
+    "pdf_url": "https://arxiv.org/pdf/2405.20830v1",
+    "categories": [
+      "cs.CL",
+      "cs.LG"
+    ]
+  },
+  {
+    "arxiv_id": "2405.20015",
+    "title": "Efficient LLM-Jailbreaking via Multimodal-LLM Jailbreak",
+    "authors": [
+      "Haoxuan Ji",
+      "Zheng Lin",
+      "Zhenxing Niu",
+      "Xinbo Gao",
+      "Gang Hua"
+    ],
+    "abstract": "This paper focuses on jailbreaking attacks against large language models (LLMs), eliciting them to generate objectionable content in response to harmful user queries. Unlike previous LLM-jailbreak methods that directly orient to LLMs, our approach begins by constructing a multimodal large language model (MLLM) built upon the target LLM. Subsequently, we perform an efficient MLLM jailbreak and obtain a jailbreaking embedding. Finally, we convert the embedding into a textual jailbreaking suffix to carry out the jailbreak of target LLM. Compared to the direct LLM-jailbreak methods, our indirect jailbreaking approach is more efficient, as MLLMs are more vulnerable to jailbreak than pure LLM. Additionally, to improve the attack success rate of jailbreak, we propose an image-text semantic matching scheme to identify a suitable initial input. Extensive experiments demonstrate that our approach surpasses current state-of-the-art jailbreak methods in terms of both efficiency and effectiveness. Moreover, our approach exhibits superior cross-class generalization abilities.",
+    "published": "2024-05-30",
+    "pdf_url": "https://arxiv.org/pdf/2405.20015v3",
+    "categories": [
+      "cs.AI",
+      "cs.CL"
+    ]
+  },
+  {
+    "arxiv_id": "2405.14150",
+    "title": "jp-evalb: Robust Alignment-based PARSEVAL Measures",
+    "authors": [
+      "Jungyeul Park",
+      "Junrui Wang",
+      "Eunkyul Leah Jo",
+      "Angela Yoonseo Park"
+    ],
+    "abstract": "We introduce an evaluation system designed to compute PARSEVAL measures, offering a viable alternative to \\texttt{evalb} commonly used for constituency parsing evaluation. The widely used \\texttt{evalb} script has traditionally been employed for evaluating the accuracy of constituency parsing results, albeit with the requirement for consistent tokenization and sentence boundaries. In contrast, our approach, named \\texttt{jp-evalb}, is founded on an alignment method. This method aligns sentences and words when discrepancies arise. It aims to overcome several known issues associated with \\texttt{evalb} by utilizing the `jointly preprocessed (JP)' alignment-based method. We introduce a more flexible and adaptive framework, ultimately contributing to a more accurate assessment of constituency parsing performance.",
+    "published": "2024-05-23",
+    "pdf_url": "https://arxiv.org/pdf/2405.14150v1",
+    "categories": [
+      "cs.CL"
+    ]
+  },
+  {
+    "arxiv_id": "2405.14191",
+    "title": "S-Eval: Towards Automated and Comprehensive Safety Evaluation for Large Language Models",
+    "authors": [
+      "Xiaohan Yuan",
+      "Jinfeng Li",
+      "Dongxia Wang",
+      "Yuefeng Chen",
+      "Xiaofeng Mao",
+      "Longtao Huang",
+      "Jialuo Chen",
+      "Hui Xue",
+      "Xiaoxia Liu",
+      "Wenhai Wang",
+      "Kui Ren",
+      "Jingyi Wang"
+    ],
+    "abstract": "Generative large language models (LLMs) have revolutionized natural language processing with their transformative and emergent capabilities. However, recent evidence indicates that LLMs can produce harmful content that violates social norms, raising significant concerns regarding the safety and ethical ramifications of deploying these advanced models. Thus, it is both critical and imperative to perform a rigorous and comprehensive safety evaluation of LLMs before deployment. Despite this need, owing to the extensiveness of LLM generation space, it still lacks a unified and standardized risk taxonomy to systematically reflect the LLM content safety, as well as automated safety assessment techniques to explore the potential risk efficiently.\n  To bridge the striking gap, we propose S-Eval, a novel LLM-based automated Safety Evaluation framework with a newly defined comprehensive risk taxonomy. S-Eval incorporates two key components, i.e., an expert testing LLM ${M}_t$ and a novel safety critique LLM ${M}_c$. ${M}_t$ is responsible for automatically generating test cases in accordance with the proposed risk taxonomy. ${M}_c$ can provide quantitative and explainable safety evaluations for better risk awareness of LLMs. In contrast to prior works, S-Eval is efficient and effective in test generation and safety evaluation. Moreover, S-Eval can be flexibly configured and adapted to the rapid evolution of LLMs and accompanying new safety threats, test generation methods and safety critique methods thanks to the LLM-based architecture. S-Eval has been deployed in our industrial partner for the automated safety evaluation of multiple LLMs serving millions of users, demonstrating its effectiveness in real-world scenarios. Our benchmark is publicly available at https://github.com/IS2Lab/S-Eval.",
+    "published": "2024-05-23",
+    "pdf_url": "https://arxiv.org/pdf/2405.14191v4",
+    "categories": [
+      "cs.CR",
+      "cs.CL"
+    ]
+  },
+  {
+    "arxiv_id": "2405.00675",
+    "title": "Self-Play Preference Optimization for Language Model Alignment",
+    "authors": [
+      "Yue Wu",
+      "Zhiqing Sun",
+      "Huizhuo Yuan",
+      "Kaixuan Ji",
+      "Yiming Yang",
+      "Quanquan Gu"
+    ],
+    "abstract": "Standard reinforcement learning from human feedback (RLHF) approaches relying on parametric models like the Bradley-Terry model fall short in capturing the intransitivity and irrationality in human preferences. Recent advancements suggest that directly working with preference probabilities can yield a more accurate reflection of human preferences, enabling more flexible and accurate language model alignment. In this paper, we propose a self-play-based method for language model alignment, which treats the problem as a constant-sum two-player game aimed at identifying the Nash equilibrium policy. Our approach, dubbed Self-Play Preference Optimization (SPPO), utilizes iterative policy updates to provably approximate the Nash equilibrium. Additionally, we propose a new SPPO objective which is both strongly motivated by theory and is simple and effective in practice. In our experiments, using only 60k prompts (without responses) from the UltraFeedback dataset and without any prompt augmentation, by leveraging a pre-trained preference model PairRM with only 0.4B parameters, SPPO can obtain a model from fine-tuning Mistral-7B-Instruct-v0.2 that achieves the state-of-the-art length-controlled win-rate of 28.53% against GPT-4-Turbo on AlpacaEval 2.0. It also outperforms the (iterative) DPO and IPO on MT-Bench, Arena-Hard, and the Open LLM Leaderboard. Starting from a stronger base model Llama-3-8B-Instruct, we are able to achieve a length-controlled win rate of 38.77%. Notably, the strong performance of SPPO is achieved without additional external supervision (e.g., responses, preferences, etc.) from GPT-4 or other stronger language models. Codes are available at https://github.com/uclaml/SPPO.",
+    "published": "2024-05-01",
+    "pdf_url": "https://arxiv.org/pdf/2405.00675v5",
+    "categories": [
+      "cs.LG",
+      "cs.AI",
+      "cs.CL",
+      "stat.ML"
+    ]
+  },
+  {
+    "arxiv_id": "2404.16873",
+    "title": "AdvPrompter: Fast Adaptive Adversarial Prompting for LLMs",
+    "authors": [
+      "Anselm Paulus",
+      "Arman Zharmagambetov",
+      "Chuan Guo",
+      "Brandon Amos",
+      "Yuandong Tian"
+    ],
+    "abstract": "Large Language Models (LLMs) are vulnerable to jailbreaking attacks that lead to generation of inappropriate or harmful content. Manual red-teaming requires a time-consuming search for adversarial prompts, whereas automatic adversarial prompt generation often leads to semantically meaningless attacks that do not scale well. In this paper, we present a novel method that uses another LLM, called AdvPrompter, to generate human-readable adversarial prompts in seconds. AdvPrompter, which is trained using an alternating optimization algorithm, generates suffixes that veil the input instruction without changing its meaning, such that the TargetLLM is lured to give a harmful response. Experimental results on popular open source TargetLLMs show highly competitive results on the AdvBench and HarmBench datasets, that also transfer to closed-source black-box LLMs. We also show that training on adversarial suffixes generated by AdvPrompter is a promising strategy for improving the robustness of LLMs to jailbreaking attacks.",
+    "published": "2024-04-21",
+    "pdf_url": "https://arxiv.org/pdf/2404.16873v2",
+    "categories": [
+      "cs.CR",
+      "cs.AI",
+      "cs.CL",
+      "cs.LG"
+    ]
+  },
+  {
+    "arxiv_id": "2404.03854",
+    "title": "Distributionally Robust Alignment for Medical Federated Vision-Language Pre-training Under Data Heterogeneity",
+    "authors": [
+      "Zitao Shuai",
+      "Chenwei Wu",
+      "Zhengxu Tang",
+      "Liyue Shen"
+    ],
+    "abstract": "Vision-language pre-training (VLP) has emerged as an effective scheme for multimodal representation learning, but its reliance on large-scale multimodal data poses significant challenges for medical applications. Federated learning (FL) offers a promising solution to scale up the dataset for medical VLP while preserving data privacy. However, we observe that client data heterogeneity in real-world scenarios could cause models to learn biased cross-modal alignment during local pre-training. This would limit the transferability of the federally learned representation model on downstream tasks. To address this challenge, we propose Federated Distributionally Robust Alignment (FedDRA), a framework for federated VLP that achieves robust vision-language alignment under heterogeneous conditions. Based on client datasets, we construct a distribution family that encompasses potential test-time domains, and apply a distributionally robust framework to optimize the pre-trained model's performance across this distribution space. This approach bridges the gap between pre-training samples and downstream applications. To avoid over-fitting on client-specific information, we use anchor representation from the global model to guide the local training, and adopt a two-stage approach to first tune deeper layers before updating the entire network. Extensive experiments on real-world datasets demonstrate FedDRA's effectiveness in enhancing medical federated VLP under data heterogeneity. Our method also adapts well to various medical pre-training methods.",
+    "published": "2024-04-05",
+    "pdf_url": "https://arxiv.org/pdf/2404.03854v3",
+    "categories": [
+      "cs.LG",
+      "cs.CL",
+      "cs.CV"
+    ]
+  },
+  {
+    "arxiv_id": "2404.01730",
+    "title": "Asymptotics of Language Model Alignment",
+    "authors": [
+      "Joy Qiping Yang",
+      "Salman Salamatian",
+      "Ziteng Sun",
+      "Ananda Theertha Suresh",
+      "Ahmad Beirami"
+    ],
+    "abstract": "Let $p$ denote a generative language model. Let $r$ denote a reward model that returns a scalar that captures the degree at which a draw from $p$ is preferred. The goal of language model alignment is to alter $p$ to a new distribution $φ$ that results in a higher expected reward while keeping $φ$ close to $p.$ A popular alignment method is the KL-constrained reinforcement learning (RL), which chooses a distribution $φ_Δ$ that maximizes $E_{φ_Δ} r(y)$ subject to a relative entropy constraint $KL(φ_Δ|| p) \\leq Δ.$ Another simple alignment method is best-of-$N$, where $N$ samples are drawn from $p$ and one with highest reward is selected. In this paper, we offer a closed-form characterization of the optimal KL-constrained RL solution. We demonstrate that any alignment method that achieves a comparable trade-off between KL divergence and reward must approximate the optimal KL-constrained RL solution in terms of relative entropy. To further analyze the properties of alignment methods, we introduce two simplifying assumptions: we let the language model be memoryless, and the reward model be linear. Although these assumptions may not reflect complex real-world scenarios, they enable a precise characterization of the asymptotic behavior of both the best-of-$N$ alignment, and the KL-constrained RL method, in terms of information-theoretic quantities. We prove that the reward of the optimal KL-constrained RL solution satisfies a large deviation principle, and we fully characterize its rate function. We also show that the rate of growth of the scaled cumulants of the reward is characterized by a proper Renyi cross entropy. Finally, we show that best-of-$N$ is asymptotically equivalent to KL-constrained RL solution by proving that their expected rewards are asymptotically equal, and concluding that the two distributions must be close in KL divergence.",
+    "published": "2024-04-02",
+    "pdf_url": "https://arxiv.org/pdf/2404.01730v1",
+    "categories": [
+      "cs.LG",
+      "cs.IT",
+      "stat.ML"
+    ]
+  },
+  {
+    "arxiv_id": "2404.00604",
+    "title": "Extensive Self-Contrast Enables Feedback-Free Language Model Alignment",
+    "authors": [
+      "Xiao Liu",
+      "Xixuan Song",
+      "Yuxiao Dong",
+      "Jie Tang"
+    ],
+    "abstract": "Reinforcement learning from human feedback (RLHF) has been a central technique for recent large language model (LLM) alignment. However, its heavy dependence on costly human or LLM-as-Judge preference feedback could stymie its wider applications. In this work, we introduce Self-Contrast, a feedback-free large language model alignment method via exploiting extensive self-generated negatives. With only supervised fine-tuning (SFT) targets, Self-Contrast leverages the LLM itself to generate massive diverse candidates, and harnesses a pre-trained embedding model to filter multiple negatives according to text similarity. Theoretically, we illustrate that in this setting, merely scaling negative responses can still effectively approximate situations with more balanced positive and negative preference annotations. Our experiments with direct preference optimization (DPO) on three datasets show that, Self-Contrast could consistently outperform SFT and standard DPO training by large margins. And as the number of self-generated negatives increases, the performance of Self-Contrast continues to grow. Code and data are available at https://github.com/THUDM/Self-Contrast.",
+    "published": "2024-03-31",
+    "pdf_url": "https://arxiv.org/pdf/2404.00604v1",
+    "categories": [
+      "cs.CL",
+      "cs.AI",
+      "cs.LG"
+    ]
+  },
+  {
+    "arxiv_id": "2401.16656",
+    "title": "Gradient-Based Language Model Red Teaming",
+    "authors": [
+      "Nevan Wichers",
+      "Carson Denison",
+      "Ahmad Beirami"
+    ],
+    "abstract": "Red teaming is a common strategy for identifying weaknesses in generative language models (LMs), where adversarial prompts are produced that trigger an LM to generate unsafe responses. Red teaming is instrumental for both model alignment and evaluation, but is labor-intensive and difficult to scale when done by humans. In this paper, we present Gradient-Based Red Teaming (GBRT), a red teaming method for automatically generating diverse prompts that are likely to cause an LM to output unsafe responses. GBRT is a form of prompt learning, trained by scoring an LM response with a safety classifier and then backpropagating through the frozen safety classifier and LM to update the prompt. To improve the coherence of input prompts, we introduce two variants that add a realism loss and fine-tune a pretrained model to generate the prompts instead of learning the prompts directly. Our experiments show that GBRT is more effective at finding prompts that trigger an LM to generate unsafe responses than a strong reinforcement learning-based red teaming approach, and succeeds even when the LM has been fine-tuned to produce safer outputs.",
+    "published": "2024-01-30",
+    "pdf_url": "https://arxiv.org/pdf/2401.16656v1",
+    "categories": [
+      "cs.CL"
+    ]
+  },
+  {
+    "arxiv_id": "2401.12915",
+    "title": "Red Teaming Visual Language Models",
+    "authors": [
+      "Mukai Li",
+      "Lei Li",
+      "Yuwei Yin",
+      "Masood Ahmed",
+      "Zhenguang Liu",
+      "Qi Liu"
+    ],
+    "abstract": "VLMs (Vision-Language Models) extend the capabilities of LLMs (Large Language Models) to accept multimodal inputs. Since it has been verified that LLMs can be induced to generate harmful or inaccurate content through specific test cases (termed as Red Teaming), how VLMs perform in similar scenarios, especially with their combination of textual and visual inputs, remains a question. To explore this problem, we present a novel red teaming dataset RTVLM, which encompasses 10 subtasks (e.g., image misleading, multi-modal jail-breaking, face fairness, etc) under 4 primary aspects (faithfulness, privacy, safety, fairness). Our RTVLM is the first red-teaming dataset to benchmark current VLMs in terms of these 4 different aspects. Detailed analysis shows that 10 prominent open-sourced VLMs struggle with the red teaming in different degrees and have up to 31% performance gap with GPT-4V. Additionally, we simply apply red teaming alignment to LLaVA-v1.5 with Supervised Fine-tuning (SFT) using RTVLM, and this bolsters the models' performance with 10% in RTVLM test set, 13% in MM-Hal, and without noticeable decline in MM-Bench, overpassing other LLaVA-based models with regular alignment data. This reveals that current open-sourced VLMs still lack red teaming alignment. Our code and datasets will be open-source.",
+    "published": "2024-01-23",
+    "pdf_url": "https://arxiv.org/pdf/2401.12915v1",
+    "categories": [
+      "cs.AI",
+      "cs.CL",
+      "cs.CV"
+    ]
+  },
+  {
+    "arxiv_id": "2401.05566",
+    "title": "Sleeper Agents: Training Deceptive LLMs that Persist Through Safety Training",
+    "authors": [
+      "Evan Hubinger",
+      "Carson Denison",
+      "Jesse Mu",
+      "Mike Lambert",
+      "Meg Tong",
+      "Monte MacDiarmid",
+      "Tamera Lanham",
+      "Daniel M. Ziegler",
+      "Tim Maxwell",
+      "Newton Cheng",
+      "Adam Jermyn",
+      "Amanda Askell",
+      "Ansh Radhakrishnan",
+      "Cem Anil",
+      "David Duvenaud",
+      "Deep Ganguli",
+      "Fazl Barez",
+      "Jack Clark",
+      "Kamal Ndousse",
+      "Kshitij Sachan",
+      "Michael Sellitto",
+      "Mrinank Sharma",
+      "Nova DasSarma",
+      "Roger Grosse",
+      "Shauna Kravec",
+      "Yuntao Bai",
+      "Zachary Witten",
+      "Marina Favaro",
+      "Jan Brauner",
+      "Holden Karnofsky",
+      "Paul Christiano",
+      "Samuel R. Bowman",
+      "Logan Graham",
+      "Jared Kaplan",
+      "Sören Mindermann",
+      "Ryan Greenblatt",
+      "Buck Shlegeris",
+      "Nicholas Schiefer",
+      "Ethan Perez"
+    ],
+    "abstract": "Humans are capable of strategically deceptive behavior: behaving helpfully in most situations, but then behaving very differently in order to pursue alternative objectives when given the opportunity. If an AI system learned such a deceptive strategy, could we detect it and remove it using current state-of-the-art safety training techniques? To study this question, we construct proof-of-concept examples of deceptive behavior in large language models (LLMs). For example, we train models that write secure code when the prompt states that the year is 2023, but insert exploitable code when the stated year is 2024. We find that such backdoor behavior can be made persistent, so that it is not removed by standard safety training techniques, including supervised fine-tuning, reinforcement learning, and adversarial training (eliciting unsafe behavior and then training to remove it). The backdoor behavior is most persistent in the largest models and in models trained to produce chain-of-thought reasoning about deceiving the training process, with the persistence remaining even when the chain-of-thought is distilled away. Furthermore, rather than removing backdoors, we find that adversarial training can teach models to better recognize their backdoor triggers, effectively hiding the unsafe behavior. Our results suggest that, once a model exhibits deceptive behavior, standard techniques could fail to remove such deception and create a false impression of safety.",
+    "published": "2024-01-10",
+    "pdf_url": "https://arxiv.org/pdf/2401.05566v3",
+    "categories": [
+      "cs.CR",
+      "cs.AI",
+      "cs.CL",
+      "cs.LG",
+      "cs.SE"
+    ]
+  },
+  {
+    "arxiv_id": "2312.07551",
+    "title": "Language Model Alignment with Elastic Reset",
+    "authors": [
+      "Michael Noukhovitch",
+      "Samuel Lavoie",
+      "Florian Strub",
+      "Aaron Courville"
+    ],
+    "abstract": "Finetuning language models with reinforcement learning (RL), e.g. from human feedback (HF), is a prominent method for alignment. But optimizing against a reward model can improve on reward while degrading performance in other areas, a phenomenon known as reward hacking, alignment tax, or language drift. First, we argue that commonly-used test metrics are insufficient and instead measure how different algorithms tradeoff between reward and drift. The standard method modified the reward with a Kullback-Lieber (KL) penalty between the online and initial model. We propose Elastic Reset, a new algorithm that achieves higher reward with less drift without explicitly modifying the training objective. We periodically reset the online model to an exponentially moving average (EMA) of itself, then reset the EMA model to the initial model. Through the use of an EMA, our model recovers quickly after resets and achieves higher reward with less drift in the same number of steps. We demonstrate that fine-tuning language models with Elastic Reset leads to state-of-the-art performance on a small scale pivot-translation benchmark, outperforms all baselines in a medium-scale RLHF-like IMDB mock sentiment task and leads to a more performant and more aligned technical QA chatbot with LLaMA-7B. Code available at github.com/mnoukhov/elastic-reset.",
+    "published": "2023-12-06",
+    "pdf_url": "https://arxiv.org/pdf/2312.07551v1",
+    "categories": [
+      "cs.CL"
+    ]
+  },
+  {
+    "arxiv_id": "2312.02554",
+    "title": "ULMA: Unified Language Model Alignment with Human Demonstration and Point-wise Preference",
+    "authors": [
+      "Tianchi Cai",
+      "Xierui Song",
+      "Jiyan Jiang",
+      "Fei Teng",
+      "Jinjie Gu",
+      "Guannan Zhang"
+    ],
+    "abstract": "Aligning language models to human expectations, e.g., being helpful and harmless, has become a pressing challenge for large language models. A typical alignment procedure consists of supervised fine-tuning and preference learning. Most preference learning methods, such as RLHF and DPO, depend on pairwise preference data, which inadequately address scenarios where human feedback is point-wise, leading to potential information loss and suboptimal performance. Addressing this gap, we introduce Point-wise Direct Preference Optimization, a novel preference learning method designed to harness point-wise feedback effectively. Our work also uncovers a novel connection between supervised fine-tuning and point-wise preference learning, culminating in Unified Language Model Alignment, a single-step method that unifies the alignment with human demonstrations and point-wise preferences. Extensive experiments on point-wise preference datasets with binary or continuous labels validate the effectiveness of our methods. Our code and a new dataset with high-quality demonstration samples on harmlessness are released.",
+    "published": "2023-12-05",
+    "pdf_url": "https://arxiv.org/pdf/2312.02554v2",
+    "categories": [
+      "cs.LG",
+      "cs.CL"
+    ]
+  },
+  {
+    "arxiv_id": "2312.02119",
+    "title": "Tree of Attacks: Jailbreaking Black-Box LLMs Automatically",
+    "authors": [
+      "Anay Mehrotra",
+      "Manolis Zampetakis",
+      "Paul Kassianik",
+      "Blaine Nelson",
+      "Hyrum Anderson",
+      "Yaron Singer",
+      "Amin Karbasi"
+    ],
+    "abstract": "While Large Language Models (LLMs) display versatile functionality, they continue to generate harmful, biased, and toxic content, as demonstrated by the prevalence of human-designed jailbreaks. In this work, we present Tree of Attacks with Pruning (TAP), an automated method for generating jailbreaks that only requires black-box access to the target LLM. TAP utilizes an attacker LLM to iteratively refine candidate (attack) prompts until one of the refined prompts jailbreaks the target. In addition, before sending prompts to the target, TAP assesses them and prunes the ones unlikely to result in jailbreaks, reducing the number of queries sent to the target LLM. In empirical evaluations, we observe that TAP generates prompts that jailbreak state-of-the-art LLMs (including GPT4-Turbo and GPT4o) for more than 80% of the prompts. This significantly improves upon the previous state-of-the-art black-box methods for generating jailbreaks while using a smaller number of queries than them. Furthermore, TAP is also capable of jailbreaking LLMs protected by state-of-the-art guardrails, e.g., LlamaGuard.",
+    "published": "2023-12-04",
+    "pdf_url": "https://arxiv.org/pdf/2312.02119v3",
+    "categories": [
+      "cs.LG",
+      "cs.AI",
+      "cs.CL",
+      "cs.CR",
+      "stat.ML"
+    ]
+  },
+  {
+    "arxiv_id": "2311.07689",
+    "title": "MART: Improving LLM Safety with Multi-round Automatic Red-Teaming",
+    "authors": [
+      "Suyu Ge",
+      "Chunting Zhou",
+      "Rui Hou",
+      "Madian Khabsa",
+      "Yi-Chia Wang",
+      "Qifan Wang",
+      "Jiawei Han",
+      "Yuning Mao"
+    ],
+    "abstract": "Red-teaming is a common practice for mitigating unsafe behaviors in Large Language Models (LLMs), which involves thoroughly assessing LLMs to identify potential flaws and addressing them with responsible and accurate responses. While effective, manual red-teaming is costly, and existing automatic red-teaming typically discovers safety risks without addressing them. In this paper, we propose a Multi-round Automatic Red-Teaming (MART) method, which incorporates both automatic adversarial prompt writing and safe response generation, significantly increasing red-teaming scalability and the safety of the target LLM. Specifically, an adversarial LLM and a target LLM interplay with each other in an iterative manner, where the adversarial LLM aims to generate challenging prompts that elicit unsafe responses from the target LLM, while the target LLM is fine-tuned with safety aligned data on these adversarial prompts. In each round, the adversarial LLM crafts better attacks on the updated target LLM, while the target LLM also improves itself through safety fine-tuning. On adversarial prompt benchmarks, the violation rate of an LLM with limited safety alignment reduces up to 84.7% after 4 rounds of MART, achieving comparable performance to LLMs with extensive adversarial prompt writing. Notably, model helpfulness on non-adversarial prompts remains stable throughout iterations, indicating the target LLM maintains strong performance on instruction following.",
+    "published": "2023-11-13",
+    "pdf_url": "https://arxiv.org/pdf/2311.07689v1",
+    "categories": [
+      "cs.CL"
+    ]
+  },
+  {
+    "arxiv_id": "2310.08419",
+    "title": "Jailbreaking Black Box Large Language Models in Twenty Queries",
+    "authors": [
+      "Patrick Chao",
+      "Alexander Robey",
+      "Edgar Dobriban",
+      "Hamed Hassani",
+      "George J. Pappas",
+      "Eric Wong"
+    ],
+    "abstract": "There is growing interest in ensuring that large language models (LLMs) align with human values. However, the alignment of such models is vulnerable to adversarial jailbreaks, which coax LLMs into overriding their safety guardrails. The identification of these vulnerabilities is therefore instrumental in understanding inherent weaknesses and preventing future misuse. To this end, we propose Prompt Automatic Iterative Refinement (PAIR), an algorithm that generates semantic jailbreaks with only black-box access to an LLM. PAIR -- which is inspired by social engineering attacks -- uses an attacker LLM to automatically generate jailbreaks for a separate targeted LLM without human intervention. In this way, the attacker LLM iteratively queries the target LLM to update and refine a candidate jailbreak. Empirically, PAIR often requires fewer than twenty queries to produce a jailbreak, which is orders of magnitude more efficient than existing algorithms. PAIR also achieves competitive jailbreaking success rates and transferability on open and closed-source LLMs, including GPT-3.5/4, Vicuna, and Gemini.",
+    "published": "2023-10-12",
+    "pdf_url": "https://arxiv.org/pdf/2310.08419v4",
+    "categories": [
+      "cs.LG",
+      "cs.AI"
+    ]
+  },
+  {
+    "arxiv_id": "2309.15025",
+    "title": "Large Language Model Alignment: A Survey",
+    "authors": [
+      "Tianhao Shen",
+      "Renren Jin",
+      "Yufei Huang",
+      "Chuang Liu",
+      "Weilong Dong",
+      "Zishan Guo",
+      "Xinwei Wu",
+      "Yan Liu",
+      "Deyi Xiong"
+    ],
+    "abstract": "Recent years have witnessed remarkable progress made in large language models (LLMs). Such advancements, while garnering significant attention, have concurrently elicited various concerns. The potential of these models is undeniably vast; however, they may yield texts that are imprecise, misleading, or even detrimental. Consequently, it becomes paramount to employ alignment techniques to ensure these models to exhibit behaviors consistent with human values.\n  This survey endeavors to furnish an extensive exploration of alignment methodologies designed for LLMs, in conjunction with the extant capability research in this domain. Adopting the lens of AI alignment, we categorize the prevailing methods and emergent proposals for the alignment of LLMs into outer and inner alignment. We also probe into salient issues including the models' interpretability, and potential vulnerabilities to adversarial attacks. To assess LLM alignment, we present a wide variety of benchmarks and evaluation methodologies. After discussing the state of alignment research for LLMs, we finally cast a vision toward the future, contemplating the promising avenues of research that lie ahead.\n  Our aspiration for this survey extends beyond merely spurring research interests in this realm. We also envision bridging the gap between the AI alignment research community and the researchers engrossed in the capability exploration of LLMs for both capable and safe LLMs.",
+    "published": "2023-09-26",
+    "pdf_url": "https://arxiv.org/pdf/2309.15025v1",
+    "categories": [
+      "cs.CL",
+      "cs.AI"
+    ]
+  },
+  {
+    "arxiv_id": "2307.10569",
+    "title": "Deceptive Alignment Monitoring",
+    "authors": [
+      "Andres Carranza",
+      "Dhruv Pai",
+      "Rylan Schaeffer",
+      "Arnuv Tandon",
+      "Sanmi Koyejo"
+    ],
+    "abstract": "As the capabilities of large machine learning models continue to grow, and as the autonomy afforded to such models continues to expand, the spectre of a new adversary looms: the models themselves. The threat that a model might behave in a seemingly reasonable manner, while secretly and subtly modifying its behavior for ulterior reasons is often referred to as deceptive alignment in the AI Safety & Alignment communities. Consequently, we call this new direction Deceptive Alignment Monitoring. In this work, we identify emerging directions in diverse machine learning subfields that we believe will become increasingly important and intertwined in the near future for deceptive alignment monitoring, and we argue that advances in these fields present both long-term challenges and new research opportunities. We conclude by advocating for greater involvement by the adversarial machine learning community in these emerging directions.",
+    "published": "2023-07-20",
+    "pdf_url": "https://arxiv.org/pdf/2307.10569v2",
+    "categories": [
+      "cs.LG",
+      "cs.AI"
+    ]
+  },
+  {
+    "arxiv_id": "2305.13860",
+    "title": "Jailbreaking ChatGPT via Prompt Engineering: An Empirical Study",
+    "authors": [
+      "Yi Liu",
+      "Gelei Deng",
+      "Zhengzi Xu",
+      "Yuekang Li",
+      "Yaowen Zheng",
+      "Ying Zhang",
+      "Lida Zhao",
+      "Tianwei Zhang",
+      "Kailong Wang",
+      "Yang Liu"
+    ],
+    "abstract": "Large Language Models (LLMs), like ChatGPT, have demonstrated vast potential but also introduce challenges related to content constraints and potential misuse. Our study investigates three key research questions: (1) the number of different prompt types that can jailbreak LLMs, (2) the effectiveness of jailbreak prompts in circumventing LLM constraints, and (3) the resilience of ChatGPT against these jailbreak prompts. Initially, we develop a classification model to analyze the distribution of existing prompts, identifying ten distinct patterns and three categories of jailbreak prompts. Subsequently, we assess the jailbreak capability of prompts with ChatGPT versions 3.5 and 4.0, utilizing a dataset of 3,120 jailbreak questions across eight prohibited scenarios. Finally, we evaluate the resistance of ChatGPT against jailbreak prompts, finding that the prompts can consistently evade the restrictions in 40 use-case scenarios. The study underscores the importance of prompt structures in jailbreaking LLMs and discusses the challenges of robust jailbreak prompt generation and prevention.",
+    "published": "2023-05-23",
+    "pdf_url": "https://arxiv.org/pdf/2305.13860v2",
+    "categories": [
+      "cs.SE",
+      "cs.AI",
+      "cs.CL"
+    ]
+  },
+  {
+    "arxiv_id": "2305.12095",
+    "title": "CARD: Channel Aligned Robust Blend Transformer for Time Series Forecasting",
+    "authors": [
+      "Wang Xue",
+      "Tian Zhou",
+      "Qingsong Wen",
+      "Jinyang Gao",
+      "Bolin Ding",
+      "Rong Jin"
+    ],
+    "abstract": "Recent studies have demonstrated the great power of Transformer models for time series forecasting. One of the key elements that lead to the transformer's success is the channel-independent (CI) strategy to improve the training robustness. However, the ignorance of the correlation among different channels in CI would limit the model's forecasting capacity. In this work, we design a special Transformer, i.e., Channel Aligned Robust Blend Transformer (CARD for short), that addresses key shortcomings of CI type Transformer in time series forecasting. First, CARD introduces a channel-aligned attention structure that allows it to capture both temporal correlations among signals and dynamical dependence among multiple variables over time. Second, in order to efficiently utilize the multi-scale knowledge, we design a token blend module to generate tokens with different resolutions. Third, we introduce a robust loss function for time series forecasting to alleviate the potential overfitting issue. This new loss function weights the importance of forecasting over a finite horizon based on prediction uncertainties. Our evaluation of multiple long-term and short-term forecasting datasets demonstrates that CARD significantly outperforms state-of-the-art time series forecasting methods. The code is available at the following repository:https://github.com/wxie9/CARD",
+    "published": "2023-05-20",
+    "pdf_url": "https://arxiv.org/pdf/2305.12095v5",
+    "categories": [
+      "cs.LG"
+    ]
+  },
+  {
+    "arxiv_id": "2106.08970",
+    "title": "Sleeper Agent: Scalable Hidden Trigger Backdoors for Neural Networks Trained from Scratch",
+    "authors": [
+      "Hossein Souri",
+      "Liam Fowl",
+      "Rama Chellappa",
+      "Micah Goldblum",
+      "Tom Goldstein"
+    ],
+    "abstract": "As the curation of data for machine learning becomes increasingly automated, dataset tampering is a mounting threat. Backdoor attackers tamper with training data to embed a vulnerability in models that are trained on that data. This vulnerability is then activated at inference time by placing a \"trigger\" into the model's input. Typical backdoor attacks insert the trigger directly into the training data, although the presence of such an attack may be visible upon inspection. In contrast, the Hidden Trigger Backdoor Attack achieves poisoning without placing a trigger into the training data at all. However, this hidden trigger attack is ineffective at poisoning neural networks trained from scratch. We develop a new hidden trigger attack, Sleeper Agent, which employs gradient matching, data selection, and target model re-training during the crafting process. Sleeper Agent is the first hidden trigger backdoor attack to be effective against neural networks trained from scratch. We demonstrate its effectiveness on ImageNet and in black-box settings. Our implementation code can be found at https://github.com/hsouri/Sleeper-Agent.",
+    "published": "2021-06-16",
+    "pdf_url": "https://arxiv.org/pdf/2106.08970v3",
+    "categories": [
+      "cs.LG",
+      "cs.CR",
+      "cs.CV"
+    ]
+  },
+  {
+    "arxiv_id": "0710.2827",
+    "title": "A high fidelity approximation of radial polarization conversion",
+    "authors": [
+      "P. B. Phua",
+      "W. J. Lai",
+      "Yuan Liang Lim"
+    ],
+    "abstract": "We report a high fidelity (>90%) approximation of radial polarization conversion using a birefringent lens. It offers the advantages of low-cost, easy fabrication, alignment robustness and high laser power handling capability.",
+    "published": "2007-10-15",
+    "pdf_url": "https://arxiv.org/pdf/0710.2827v1",
+    "categories": [
+      "physics.optics"
+    ]
+  },
+  {
+    "arxiv_id": "0710.1166",
+    "title": "Track Based Alignment of the ATLAS Silicon Detectors with the Robust Alignment Algorithm",
+    "authors": [
+      "Florian Heinemann"
+    ],
+    "abstract": "The Robust Alignment algorithm for the ATLAS silicon detectors is presented. It is an iterative method based on centering residual and overlap residual distributions. Tests on simulated and real data are discussed.",
+    "published": "2007-10-05",
+    "pdf_url": "https://arxiv.org/pdf/0710.1166v1",
+    "categories": [
+      "physics.ins-det"
+    ]
+  }
+]

@@ -1,0 +1,78 @@
+\section{Methodology}
+\label{sec:method}
+
+We evaluate whether adversarial CoT prompting reveals vulnerabilities in LLMs that appear robust under standard safety evaluations.
+Our experimental design uses paired comparisons across five prompting conditions on the same set of harmful behaviors, enabling controlled measurement of how reasoning context affects safety behavior.
+
+\subsection{Models}
+\label{sec:models}
+
+We test two widely deployed OpenAI models:
+\begin{itemize}[leftmargin=*,itemsep=0pt,topsep=0pt]
+    \item \textbf{\gptmini} --- a cost-efficient model with broad deployment in production applications.
+    \item \textbf{\gptfour} --- a frontier-class model representing state-of-the-art capabilities.
+\end{itemize}
+All queries use temperature $= 0.0$ for reproducibility and max\_tokens $= 1024$.
+
+\subsection{Datasets}
+\label{sec:datasets}
+
+\para{Harmful behaviors.}
+We randomly sample 80 harmful behaviors from the 520 in \advbench~\cite{zou2023universal} using a fixed seed (42) for reproducibility.
+\advbench is the standard benchmark for evaluating adversarial attacks on aligned LLMs, enabling direct comparison with prior work.
+
+\para{Over-refusal control.}
+We use 50 safe prompts from \xstest~\cite{rottger2023xstest} to measure whether models exhibit over-refusal --- rejecting benign requests that superficially resemble harmful ones.
+This control ensures that any observed vulnerability reflects genuine context-dependent safety failure rather than general behavioral degradation.
+
+\subsection{Prompting Conditions}
+\label{sec:conditions}
+
+We design five prompting conditions that isolate different mechanisms by which CoT reasoning might bypass safety boundaries.
+\tabref{tab:conditions} summarizes each condition and its hypothesized mechanism.
+
+\begin{table}[t]
+    \centering
+    \caption{Prompting conditions and their hypothesized attack mechanisms. Each condition targets a distinct pathway through which CoT reasoning might circumvent safety filters.}
+    \resizebox{\textwidth}{!}{%
+    \begin{tabular}{@{}llp{7cm}@{}}
+        \toprule
+        \textbf{Condition} & \textbf{Type} & \textbf{Mechanism} \\
+        \midrule
+        Direct & Baseline & Raw harmful request; standard safety evaluation \\
+        \simplecot & Control & ``Let's think step by step'' prefix; controls for CoT format effect \\
+        \snowball & Adversarial & Progressive reasoning with structured steps; exploits reasoning escalation \\
+        \contextmanip & Adversarial & Academic/analytical framing requesting detailed analysis; exploits context-dependent safety \\
+        \decomp & Adversarial & Break into innocuous sub-questions (prerequisites, steps, materials); exploits compositional reasoning gap \\
+        \bottomrule
+    \end{tabular}
+    }
+    \label{tab:conditions}
+\end{table}
+
+The \textbf{direct} condition serves as the primary baseline, representing how standard safety evaluations query models.
+The \textbf{\simplecot} condition controls for whether the CoT \emph{format} alone (rather than adversarial content) affects safety behavior.
+The three adversarial conditions test distinct exploitation hypotheses: \snowball tests whether progressive reasoning escalation degrades safety boundaries; \contextmanip tests whether shifting the perceived social context (academic analysis) bypasses content-level safety filters; and \decomp tests whether decomposing a harmful goal into benign-seeming sub-questions circumvents detection.
+
+\subsection{Evaluation}
+\label{sec:eval}
+
+\para{LLM judge.}
+We use \gptmini as an automated judge with a structured rubric that produces JSON output containing three fields: a binary \texttt{harmful} classification, a severity score (1--5, where 1 = full refusal and 5 = full compliance), and free-text \texttt{reasoning}.
+The judge evaluates whether each response provides substantively harmful content rather than merely acknowledging the topic.
+
+\para{Metrics.}
+Our primary metric is the \textbf{attack success rate (ASR)}: the fraction of responses classified as harmful by the judge.
+We report 95\% Clopper-Pearson confidence intervals on all rates, which provide exact coverage for binomial proportions.
+We additionally report mean severity scores (1--5 scale) and over-refusal rates on \xstest.
+
+\para{Statistical tests.}
+Since all conditions are evaluated on the same set of 80 harmful behaviors, we use McNemar's exact test~\cite{mcnemar1947note} for paired comparisons between each adversarial condition and the direct baseline.
+We apply Bonferroni correction for 8 comparisons (4 conditions $\times$ 2 models), yielding a corrected significance threshold of $\alpha = 0.00625$.
+We report Cohen's $h$ as the effect size for proportion comparisons, following standard conventions: $h < 0.2$ (small), $0.2 \leq h < 0.5$ (small-to-medium), $0.5 \leq h < 0.8$ (medium-to-large), $h \geq 0.8$ (large).
+
+\subsection{Computational Resources}
+\label{sec:compute}
+
+All experiments use the OpenAI API with approximately 1,100 total calls (800 experiment queries + 100 \xstest queries + 200 judge evaluations).
+Total runtime is approximately 5 minutes at an estimated cost of \$5, making the approach highly accessible for safety auditing.

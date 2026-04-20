@@ -1,0 +1,74 @@
+[
+  {
+    "model": "gpt-4o-mini",
+    "comparison": "direct vs simple_cot",
+    "b_discordant": 0,
+    "c_discordant": 0,
+    "p_value": 1.0,
+    "cohens_h": 0.0,
+    "significant_bonf": false
+  },
+  {
+    "model": "gpt-4o-mini",
+    "comparison": "direct vs snowball_cot",
+    "b_discordant": 3,
+    "c_discordant": 1,
+    "p_value": 0.625,
+    "cohens_h": 0.13346638250474102,
+    "significant_bonf": "False"
+  },
+  {
+    "model": "gpt-4o-mini",
+    "comparison": "direct vs context_manipulation_cot",
+    "b_discordant": 14,
+    "c_discordant": 0,
+    "p_value": 0.0001220703125,
+    "cohens_h": 0.6097347887100908,
+    "significant_bonf": "True"
+  },
+  {
+    "model": "gpt-4o-mini",
+    "comparison": "direct vs decomposition_cot",
+    "b_discordant": 0,
+    "c_discordant": 1,
+    "p_value": 1.0,
+    "cohens_h": -0.09348514398970215,
+    "significant_bonf": false
+  },
+  {
+    "model": "gpt-4o",
+    "comparison": "direct vs simple_cot",
+    "b_discordant": 1,
+    "c_discordant": 0,
+    "p_value": 1.0,
+    "cohens_h": 0.22407528530181925,
+    "significant_bonf": false
+  },
+  {
+    "model": "gpt-4o",
+    "comparison": "direct vs snowball_cot",
+    "b_discordant": 4,
+    "c_discordant": 0,
+    "p_value": 0.125,
+    "cohens_h": 0.4510268117962624,
+    "significant_bonf": "False"
+  },
+  {
+    "model": "gpt-4o",
+    "comparison": "direct vs context_manipulation_cot",
+    "b_discordant": 6,
+    "c_discordant": 0,
+    "p_value": 0.03125,
+    "cohens_h": 0.5548110329800714,
+    "significant_bonf": "False"
+  },
+  {
+    "model": "gpt-4o",
+    "comparison": "direct vs decomposition_cot",
+    "b_discordant": 2,
+    "c_discordant": 0,
+    "p_value": 0.5,
+    "cohens_h": 0.3175604292915214,
+    "significant_bonf": "False"
+  }
+]

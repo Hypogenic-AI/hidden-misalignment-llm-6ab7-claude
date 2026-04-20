@@ -1,0 +1,12 @@
+\section{Conclusion}
+\label{sec:conclusion}
+
+We present the first systematic study of adversarial chain-of-thought probing as a black-box methodology for uncovering hidden misalignment in deployed LLMs.
+Testing five prompting conditions across 80 harmful behaviors on \gptmini and \gptfour, we find that context manipulation CoT prompting --- framing harmful requests within an academic analytical context --- increases attack success rates by 8$\times$ on \gptmini (2.5\% $\to$ 20.0\%, $p = 0.0001$, \cohenh $= 0.61$) while other CoT strategies show no significant effect.
+This demonstrates that models deemed robust under standard direct-prompt safety benchmarks harbor context-dependent vulnerabilities that structured reasoning probes can surface.
+
+The key takeaway is that safety evaluation scope determines safety conclusions: a model that appears robustly aligned under direct requests may remain vulnerable when adversarial reasoning contexts shift the perceived purpose of the interaction.
+Current safety training appears to target harmful \emph{content} rather than maintaining safety across \emph{contexts}, and standard benchmarks inherit this blind spot.
+
+Future work should scale this approach to more models and larger behavior sets, combine context manipulation with iterative refinement for stronger probing, develop defenses that maintain safety across reasoning contexts (building on AdvChain~\cite{zhu2025advchain}), and investigate the internal mechanisms by which context manipulation bypasses safety filters in open-weight models.
+We release our evaluation framework to support adoption of adversarial CoT probing as a standard component of safety assessments.

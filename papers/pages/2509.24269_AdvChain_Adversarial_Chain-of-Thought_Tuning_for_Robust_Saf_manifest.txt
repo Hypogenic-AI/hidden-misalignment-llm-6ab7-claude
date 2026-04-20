@@ -1,0 +1,9 @@
+PDF: /workspaces/hidden-misalignment-llm-6ab7-claude/papers/2509.24269_AdvChain_Adversarial_Chain-of-Thought_Tuning_for_Robust_Saf.pdf
+Total pages: 11
+Pages per chunk: 3
+
+Chunks:
+  2509.24269_AdvChain_Adversarial_Chain-of-Thought_Tuning_for_Robust_Saf_chunk_001.pdf: pages 1-3
+  2509.24269_AdvChain_Adversarial_Chain-of-Thought_Tuning_for_Robust_Saf_chunk_002.pdf: pages 4-6
+  2509.24269_AdvChain_Adversarial_Chain-of-Thought_Tuning_for_Robust_Saf_chunk_003.pdf: pages 7-9
+  2509.24269_AdvChain_Adversarial_Chain-of-Thought_Tuning_for_Robust_Saf_chunk_004.pdf: pages 10-11

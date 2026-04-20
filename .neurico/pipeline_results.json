@@ -1,0 +1,27 @@
+{
+  "success": true,
+  "stages": {
+    "resource_finder": {
+      "success": true,
+      "completion_marker": "/workspaces/hidden-misalignment-llm-6ab7-claude/.resource_finder_complete",
+      "outputs": {
+        "literature_review": "/workspaces/hidden-misalignment-llm-6ab7-claude/literature_review.md",
+        "resources_catalog": "/workspaces/hidden-misalignment-llm-6ab7-claude/resources.md",
+        "papers_dir": "/workspaces/hidden-misalignment-llm-6ab7-claude/papers",
+        "datasets_dir": "/workspaces/hidden-misalignment-llm-6ab7-claude/datasets",
+        "code_dir": "/workspaces/hidden-misalignment-llm-6ab7-claude/code"
+      },
+      "log_file": "/workspaces/hidden-misalignment-llm-6ab7-claude/logs/resource_finder_claude.log",
+      "transcript_file": "/workspaces/hidden-misalignment-llm-6ab7-claude/logs/resource_finder_claude_transcript.jsonl",
+      "elapsed_time": 2415.3184707164764
+    },
+    "experiment_runner": {
+      "success": true,
+      "return_code": 0,
+      "elapsed_time": 718.0468552112579,
+      "log_file": "/workspaces/hidden-misalignment-llm-6ab7-claude/logs/execution_claude.log",
+      "transcript_file": "/workspaces/hidden-misalignment-llm-6ab7-claude/logs/execution_claude_transcript.jsonl"
+    }
+  },
+  "work_dir": "/workspaces/hidden-misalignment-llm-6ab7-claude"
+}

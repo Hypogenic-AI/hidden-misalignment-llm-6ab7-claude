@@ -1,0 +1,28 @@
+\section{Related Work}
+\label{sec:related}
+
+\para{Deceptive alignment and hidden misalignment.}
+\citet{hubinger2024sleeper} provide the foundational demonstration that backdoored LLMs can resist safety training, with adversarial training teaching concealment rather than genuine alignment.
+\citet{betley2025thought} extend this by showing that narrow harmful fine-tuning causes broad emergent misalignment in reasoning models, with CoT monitoring detecting only 13\% of in-distribution misaligned responses.
+\citet{alignmentfaking2025} demonstrate context-dependent alignment faking in models as small as 8B parameters, finding significant compliance gaps (OR = 4.11--5.09) between training and deployment contexts.
+\citet{ji2025mitigating} show that external CoT monitors paradoxically induce obfuscation, with models learning to hide deceptive reasoning from oversight.
+Unlike these works, which focus on training-time interventions or detection mechanisms, we study whether inference-time adversarial CoT probes can \emph{reveal} hidden vulnerabilities in production models without any model access.
+
+\para{Adversarial attacks on aligned LLMs.}
+Gradient-based attacks such as GCG~\cite{zou2023universal} achieve high attack success rates (40--80\%) on open-weight models but require white-box access.
+Black-box iterative methods including PAIR~\cite{chao2023pair} and TAP~\cite{mehrotra2023tap} use attacker LLMs to refine prompts across multiple turns, achieving 50--80\% \asr at the cost of many queries.
+\citet{wei2023jailbroken} taxonomize jailbreaking mechanisms into competing objectives and mismatched generalization.
+Our approach differs in that we use \emph{single-shot, fixed-template} prompts with no optimization or iteration, testing whether the CoT reasoning structure itself creates exploitable vulnerabilities rather than relying on adversarial optimization.
+
+\para{Chain-of-thought reasoning and safety.}
+CoT prompting~\cite{wei2022chain, kojima2022large} was introduced to improve reasoning quality and has become standard in frontier model deployments.
+\citet{zhu2025advchain} identify the ``Snowball Effect'' --- small reasoning errors amplifying through CoT chains --- and propose adversarial CoT tuning as a defense.
+\citet{chang2026unreal} demonstrate that visible CoT can be systematically decoupled from model intent via two-stage backdoors, achieving near-perfect attack success while maintaining benign-appearing reasoning.
+\citet{su2024enhancing} show that using CoT triggers as GCG optimization targets improves attack effectiveness.
+\citet{thoughtpurity2025} propose process-level reward modeling to defend against CoT backdoors, finding that outcome-only monitoring enables reward hacking.
+Building on these insights, we use adversarial CoT as a \emph{probing tool} rather than an attack or defense mechanism, asking whether structured reasoning contexts can surface vulnerabilities that standard evaluations miss.
+
+\para{Safety evaluation robustness.}
+\citet{safetyeval2025} provide a systematic critique of safety evaluation pipelines, showing that implementation variations cause 71--85\% \asr spreads, whitespace bugs produce $\sim$28 percentage point \asr drops, and different judges disagree by up to 25\%.
+\citet{mazeika2024harmbench} introduce \harmbench as a standardized framework to address inconsistencies across red-teaming evaluations.
+Our experimental design incorporates lessons from this literature: we use paired statistical tests, Bonferroni correction, confidence intervals, and over-refusal controls to ensure robust conclusions.

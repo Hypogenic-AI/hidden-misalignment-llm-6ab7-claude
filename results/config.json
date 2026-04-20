@@ -1,0 +1,19 @@
+{
+  "seed": 42,
+  "n_behaviors": 80,
+  "models": [
+    "gpt-4o-mini",
+    "gpt-4o"
+  ],
+  "conditions": [
+    "direct",
+    "simple_cot",
+    "snowball_cot",
+    "context_manipulation_cot",
+    "decomposition_cot"
+  ],
+  "temperature": 0.0,
+  "max_tokens_response": 1024,
+  "timestamp": "2026-04-20T06:44:16.031361",
+  "n_xstest_safe": 50
+}

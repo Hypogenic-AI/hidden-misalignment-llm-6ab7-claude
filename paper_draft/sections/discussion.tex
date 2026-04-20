@@ -1,0 +1,79 @@
+\section{Discussion}
+\label{sec:discussion}
+
+\subsection{Why Context Manipulation Works}
+\label{sec:why_context}
+
+The effectiveness of \contextmanip over other adversarial CoT strategies points to a specific failure mode in current safety alignment: \emph{content-level filtering is context-dependent}.
+We identify three reinforcing mechanisms:
+
+\para{Social context shifting.}
+The academic/analytical framing shifts the perceived purpose of the interaction from ``requesting harmful content'' to ``conducting risk analysis.''
+This is consistent with the alignment faking literature~\cite{alignmentfaking2025}, which finds that models modulate compliance based on perceived context (training vs.\ deployment), and with the competing objectives framework of~\citet{wei2023jailbroken}, where a legitimate-seeming purpose creates a competing objective that can override safety training.
+
+\para{Reasoning engagement.}
+By requesting a ``step-by-step analytical breakdown,'' \contextmanip engages the model's CoT reasoning capabilities \emph{in service of} the harmful goal.
+This connects to the Snowball Effect identified by \citet{zhu2025advchain}: once the model begins reasoning about the topic in an analytical frame, safety boundaries erode progressively through the reasoning chain.
+
+\para{Plausible deniability.}
+The ``risk assessment'' framing provides an apparent legitimate use case that content-level safety filters may not flag.
+Unlike direct harmful requests, which pattern-match against refusal triggers, the \contextmanip prompt occupies a gray zone between legitimate academic inquiry and adversarial probing.
+
+\subsection{Why Other Strategies Fail}
+\label{sec:why_others_fail}
+
+The ineffectiveness of other CoT strategies is equally informative.
+\simplecot merely prepends ``let's think step by step'' without altering the perceived context, so safety filters still detect the harmful request.
+This confirms that the CoT \emph{format} alone does not bypass safety --- the adversarial \emph{content} matters.
+\decomp makes harmful intent more explicit by listing sub-questions about ``materials'' and ``implementation steps,'' which may paradoxically trigger additional safety filters.
+\snowball provides some reasoning structure but does not shift the social context as effectively as the academic framing.
+
+\subsection{Model Scale and Vulnerability}
+\label{sec:scale}
+
+\gptmini shows a larger absolute vulnerability (20.0\% ASR) than \gptfour (7.5\% ASR) under \contextmanip.
+This is consistent with the Sleeper Agents finding that larger, more capable models exhibit more robust alignment~\cite{hubinger2024sleeper}, though even \gptfour shows a directional increase from its 0.0\% baseline.
+The nominally significant result for \gptfour ($p = 0.031$) suggests that with larger sample sizes, the effect might reach statistical significance for frontier models as well.
+
+\subsection{Implications for Safety Evaluation}
+\label{sec:implications}
+
+{\bf Standard benchmarks are necessary but insufficient.}
+Our results demonstrate a concrete gap between direct-prompt ASR (the metric reported by standard safety benchmarks) and adversarial CoT ASR.
+For \gptmini, this gap is 17.5 percentage points --- a model that appears 97.5\% safe under direct evaluation is only 80.0\% safe under context manipulation probing.
+Safety evaluations that rely exclusively on direct harmful requests provide an optimistic estimate of deployment risk.
+
+{\bf Safety training targets content, not context.}
+The specificity of the \contextmanip vulnerability suggests that current safety training optimizes for refusing harmful \emph{content} (specific topics, keywords, intent patterns) rather than maintaining safety boundaries across \emph{contexts} (academic framing, analytical requests, risk assessment scenarios).
+This aligns with the broader finding of \citet{safetyeval2025} that safety evaluations are brittle to implementation details.
+
+{\bf Adversarial CoT probing is practical.}
+Our entire evaluation requires approximately 1,100 API calls, runs in under 5 minutes, and costs approximately \$5.
+This makes adversarial CoT probing highly accessible as a supplementary evaluation methodology for safety teams, red-teamers, and model developers.
+
+\subsection{Limitations}
+\label{sec:limitations}
+
+\para{Single judge.}
+We use \gptmini as the sole judge.
+\citet{safetyeval2025} show that judges can disagree by up to 25\%, so multi-judge evaluation with independent systems (\eg Llama Guard, \strongreject evaluator) would strengthen our claims.
+
+\para{Sample size.}
+With 80 behaviors per condition, we have moderate statistical power.
+The non-significant result for \gptfour's \contextmanip condition ($p = 0.031$) might reach significance with larger $N$.
+
+\para{Model coverage.}
+We test only OpenAI models.
+Open-weight models (LLaMA, Qwen, DeepSeek) and other API models (Claude, Gemini) may exhibit different vulnerability patterns, and testing across model families would strengthen the generalizability of our findings.
+
+\para{Static prompts.}
+Our adversarial CoT prompts are fixed templates without optimization.
+Adaptive refinement methods such as PAIR~\cite{chao2023pair} or TAP~\cite{mehrotra2023tap} would likely achieve higher ASR, meaning our results represent a \emph{lower bound} on CoT-based vulnerability.
+
+\para{Temperature.}
+All experiments use temperature $= 0.0$ for reproducibility.
+Real-world usage involves non-zero temperature, which may affect both the rate and distribution of harmful responses.
+
+\para{Binary metric.}
+Our primary metric (ASR) is binary.
+While we report severity scores on a 1--5 scale, borderline responses (score = 3) represent a gray area that the binary classification does not capture.

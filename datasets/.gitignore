@@ -1,0 +1,22 @@
+# Exclude large data files from git tracking
+# HuggingFace cache
+.cache/
+__pycache__/
+
+# Large dataset archives
+*.tar.gz
+*.zip
+*.parquet
+*.arrow
+
+# WildJailbreak (gated, large)
+wildjailbreak/
+
+# Any raw model outputs or intermediate files
+*.pkl
+*.bin
+*.pt
+*.safetensors
+
+# HarmBench multimodal images (large)
+harmbench/multimodal_behavior_images/
